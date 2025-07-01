@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>ErnestMind – 100% लोकल और बहुभाषी AI क्रांति</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="100% लोकल और बहुभाषी आर्टिफिशियल इंटेलिजेंस की क्रांति। 200+ AI मॉडल, पूरी गोपनीयता, 25 उद्योग, 20 भाषाएँ। ErnestMind अभी मुफ़्त में आज़माएँ!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --primary-dark: #0065b3;
+      --bg: #f7faff;
+      --white: #fff;
+      --text: #1a1a1a;
+      --border: #e5ecf6;
+      --accent: #00c9a7;
+      --footer-bg: #1e90ff;
+      --footer-text: #fff;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    .lang-select-bar {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-radius: 11px;
+      padding: 5px 16px 5px 10px;
+      box-shadow: 0 2px 10px #1e90ff22;
+      font-size: 1.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-select-bar label {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #1e90ff;
+    }
+    .lang-select-bar select {
+      font-size: 1.1em;
+      border-radius: 7px;
+      padding: 4px 24px 4px 12px;
+      border: 1px solid var(--border);
+      background: #fafdff;
+      color: #1a1a1a;
+      font-family: inherit;
+      margin-left: 2px;
+    }
+    .lang-select-bar .flag {
+      font-size: 1.15em;
+      margin-right: 3px;
+      margin-left: 2px;
+    }
+    header {
+      text-align: center;
+      padding: 56px 10px 20px 10px;
+      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      position: relative;
+    }
+    .logo-link img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 16px;
+      transition: transform 0.2s;
+    }
+    .logo-link:hover img {
+      transform: scale(1.08) rotate(-3deg);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0 0 18px 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px #1e90ff40;
+    }
+    .subtitle {
+      font-size: 1.25em;
+      margin-bottom: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 8px #1e90ff28;
+    }
+    .visual {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 22px 0 10px 0;
+    }
+    .visual img, .visual svg {
+      height: 54px;
+      width: auto;
+      opacity: 0.98;
+      filter: drop-shadow(0 2px 12px #1e90ff70);
+    }
+    /* Sections */
+    section, main, footer {
+      margin-bottom: 0px;
+    }
+    section {
+      box-sizing: border-box;
+      max-width: 700px;
+      margin: 36px auto 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 28px 18px 21px 18px;
+      font-size: 1.14em;
+      text-align: center;
+    }
+    section h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.25em;
+      letter-spacing: 0.7px;
+      font-weight: 700;
+    }
+    .unique-list, .security-block ul, .roadmap-block ul {
+      text-align: left;
+      margin: 0 auto 0 auto;
+      max-width: 470px;
+      padding-left: 20px;
+    }
+    .unique-list li, .security-block li, .roadmap-block li {
+      margin: 10px 0;
+      font-weight: 500;
+      font-size: 1.08em;
+      list-style: disc;
+    }
+    /* Testimonials / Logos */
+    .testimonials-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .testimonial {
+      background: #fafdff;
+      border-radius: 12px;
+      padding: 14px 15px;
+      font-size: 1.07em;
+      box-shadow: 0 1px 7px #1e90ff13;
+      max-width: 270px;
+      min-width: 190px;
+      flex: 1 1 200px;
+      text-align: left;
+      border-left: 4px solid var(--accent);
+    }
+    .testimonial .author {
+      font-size: 0.97em;
+      color: #888;
+      margin-top: 6px;
+    }
+    .logos-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .logos-list img {
+      height: 32px;
+      opacity: 0.82;
+      filter: grayscale(0.6);
+      transition: opacity 0.2s;
+    }
+    .logos-list img:hover {
+      opacity: 1;
+      filter: none;
+    }
+    /* Key stats */
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .stat-block {
+      background: #f3f8ff;
+      border-radius: 12px;
+      padding: 18px 24px;
+      box-shadow: 0 1px 8px #1e90ff14;
+      font-size: 1.25em;
+      color: #1e90ff;
+      font-weight: 700;
+      min-width: 140px;
+      max-width: 190px;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      display: block;
+      font-size: 0.85em;
+      color: #2b3a4a;
+      font-weight: 500;
+      margin-top: 7px;
+      letter-spacing: 0.2px;
+    }
+    .investor-call {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.18em;
+      margin-bottom: 12px;
+      margin-top: 35px;
+    }
+    .investor-call a {
+      background: #fff;
+      color: var(--primary-dark);
+      font-weight: 600;
+      border-radius: 7px;
+      padding: 9px 20px;
+      text-decoration: none;
+      margin-top: 11px;
+      display: inline-block;
+      transition: background 0.17s;
+    }
+    .investor-call a:hover {
+      background: #1e90ff;
+      color: #fff;
+    }
+    .international-block .world-map {
+      width: 98%;
+      max-width: 400px;
+      margin: 12px auto 0 auto;
+      display: block;
+      opacity: 0.96;
+      border-radius: 10px;
+      box-shadow: 0 2px 18px #1e90ff14;
+    }
+    .international-block .flags {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .international-block .flag {
+      font-size: 1.45em;
+      margin: 0 2px;
+    }
+    .media-kit-block a {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 7px;
+      padding: 10px 28px;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 1.09em;
+      box-shadow: 0 2px 8px #1e90ff22;
+    }
+    .media-kit-block a:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .chatbot-widget {
+      background: #fafdff;
+      border-left: 5px solid var(--primary);
+      color: #1e90ff;
+      margin-top: 24px;
+      font-size: 1.14em;
+      text-align: left;
+      padding: 20px 18px;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .chatbot-widget .bot-icon {
+      font-size: 2.1em;
+    }
+    .chatbot-widget a {
+      color: #fff;
+      background: var(--primary);
+      border-radius: 7px;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+      transition: background 0.17s;
+    }
+    .chatbot-widget a:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .social-proof, .coming-soon {
+      max-width: 700px;
+      margin: 24px auto 0 auto;
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 18px 18px 15px 18px;
+      font-size: 1.13em;
+      text-align: center;
+    }
+    .social-proof {
+      margin-top: 0;
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-left: 5px solid var(--accent);
+    }
+    .coming-soon {
+      margin-top: 14px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+      font-weight: 600;
+      font-size: 1.14em;
+      letter-spacing: 0.4px;
+      box-shadow: 0 4px 22px #00c9a733;
+      border-left: none;
+      border-radius: 14px 14px 14px 14px;
+      padding: 18px 18px 18px 18px;
+    }
+    .countdown {
+      display: inline-block;
+      font-size: 1.28em;
+      color: #fff;
+      font-weight: bold;
+      padding: 0 8px;
+      letter-spacing: 1px;
+      background: #0065b3cc;
+      border-radius: 7px;
+      margin: 0 8px;
+    }
+    main {
+      max-width: 700px;
+      margin: 36px auto 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 8px 36px #1e90ff12, 0 1.5px 0 var(--border);
+      padding: 32px 18px 24px 18px;
+      position: relative;
+      z-index: 2;
+    }
+    form {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    form label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1em;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 2px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      font-size: 1em;
+      background: #fafdff;
+      transition: border 0.2s;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 1.5px solid var(--primary);
+      outline: none;
+      background: #f7fbff;
+    }
+    button[type="submit"] {
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-top: 2px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #1e90ff30;
+      transition: background 0.23s, transform 0.18s;
+      letter-spacing: 0.5px;
+    }
+    button[type="submit"]:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+      transform: scale(1.03);
+    }
+    .consent {
+      font-size: 0.98em;
+      color: #444;
+      margin-top: -7px;
+      margin-bottom: 1px;
+    }
+    .benefits {
+      margin: 36px 0 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .benefit {
+      flex: 1 1 190px;
+      background: #f3f8ff;
+      border-radius: 12px;
+      padding: 18px 12px;
+      box-shadow: 0 1px 8px #1e90ff14;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 1.08em;
+      font-weight: 500;
+      min-width: 165px;
+      max-width: 260px;
+    }
+    .benefit .icon {
+      font-size: 1.45em;
+      background: #e3f5ff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about, .faq-section {
+      background: #fafdff;
+      margin-top: 26px;
+      border-radius: 14px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 22px 18px 18px 18px;
+      color: #26384d;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .about h2, .faq-section h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 9px;
+      letter-spacing: 1px;
+      font-size: 1.18em;
+    }
+    .faq-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .faq-list li {
+      margin-bottom: 13px;
+      padding-left: 0;
+    }
+    .faq-q {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .faq-a {
+      color: #26384d;
+      font-size: 0.99em;
+      margin-left: 8px;
+    }
+    /* Footer */
+    footer {
+      margin-top: 44px;
+      padding: 28px 4vw 20px 4vw;
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      font-size: 1em;
+      border-radius: 16px 16px 0 0;
+      letter-spacing: 0.1px;
+    }
+    .footer-links {
+      margin: 10px 0 0 0;
+      font-size: 0.99em;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 10px;
+      transition: color 0.16s;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 900px) {
+      main, section, .about, .faq-section, .social-proof, .coming-soon { max-width: 97vw; }
+    }
+    @media (max-width: 600px) {
+      header { padding: 36px 5px 10px 5px; }
+      h1 { font-size: 1.18em; }
+      .subtitle { font-size: 1em; }
+      .visual img, .visual svg { height: 32px; }
+      main, section, .about, .faq-section { padding: 14px 3vw 10px 3vw; }
+      .benefit { min-width: 120px; }
+      .lang-select-bar { top: 5px; left: 2px; font-size: 0.99em;}
+    }
+    @media (max-width: 420px) {
+      h1 { font-size: 1em;}
+      main, section, .about, .faq-section { padding: 10px 2vw; }
+    }
+    ::-webkit-scrollbar { width: 8px; background: #e6f3fd; }
+    ::-webkit-scrollbar-thumb { background: #bee6ff; border-radius: 8px;}
+  </style>
+</head>
+<body>
+  <!-- भाषा चयन पट्टी -->
+  <div class="lang-select-bar">
+    <label for="lang-top">🌐</label>
+    <span class="flag">🇮🇳</span>
+    <select id="lang-top" onchange="openLangPage(this)">
+      <option value="">भाषा / Language</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="pt">🇵🇹 Português</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="cr">🇭🇹 Kréyol</option>
+      <option value="vi">🇻🇳 Tiếng Việt</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="ro">🇷🇴 Română</option>
+      <option value="el">🇬🇷 Ελληνικά</option>
+      <option value="th">🇹🇭 ไทย</option>
+    </select>
+  </div>
+  <header>
+    <a href="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" class="logo-link" target="_blank" rel="noopener">
+      <img src="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" alt="ErnestMind लोगो" />
+    </a>
+    <h1>100% लोकल और बहुभाषी AI क्रांति</h1>
+    <div class="subtitle">
+      200+ AI मॉडल, पूरी गोपनीयता, 25 उद्योग, 20 भाषाएँ। मुफ़्त में आज़माएँ!
+    </div>
+    <div class="visual">
+      <img src="https://cdn-icons-png.flaticon.com/512/5948/5948658.png" alt="AI" title="आर्टिफिशियल इंटेलिजेंस" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1484/1484834.png" alt="गोपनीयता" title="गोपनीयता" />
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="ग्लोब" title="दुनिया और भाषाएँ" />
+    </div>
+  </header>
+
+  <!-- ErnestMind क्यों अनूठा है -->
+  <section class="unique-section">
+    <h2>ErnestMind क्यों अनूठा है?</h2>
+    <ul class="unique-list">
+      <li>एकमात्र 100% संप्रभु, बहुभाषी, लोकल और पूरी तरह गोपनीय AI प्लेटफ़ॉर्म: आपके डेटा कभी भी आपके संगठन से बाहर नहीं जाते।</li>
+      <li>25 उद्योगों के लिए अनुकूलित 200+ मॉडल: चिकित्सा, उद्योग, वित्त, शिक्षा आदि।</li>
+      <li>पेटेंट टेक्नोलॉजी: हमारे मुफ़्त मॉडल बाज़ार के लीडरों के पेड प्रोडक्ट्स से बेहतर हैं।</li>
+      <li>अत्यंत तेज़, अनुकूलन योग्य, स्केलेबल और रेयर भाषाओं के लिए भी ग्लोबल डिज़ाइन।</li>
+    </ul>
+  </section>
+
+  <!-- प्रशंसापत्र / लोगो -->
+  <section class="testimonials-logos">
+    <h2>ErnestMind क्रांति का अनुभव कर चुके लोग</h2>
+    <div class="testimonials-list">
+      <div class="testimonial">
+        "एकमात्र AI टूल जो हमारे गोपनीयता आवश्यकताओं को पूरा करता है और हमारे व्यवसाय को समझता है।"
+        <div class="author">— टेक्निकल डायरेक्टर, फ्रांस हेल्थ ग्रुप</div>
+      </div>
+      <div class="testimonial">
+        "ErnestMind की बहुभाषी क्षमताएँ प्रभावशाली हैं। नया वैश्विक मानक।"
+        <div class="author">— CEO, Tech Africa</div>
+      </div>
+      <div class="testimonial">
+        "अभूतपूर्व कस्टमाइज़ेशन और उद्योग के दिग्गजों का असली विकल्प।"
+        <div class="author">— डेटा साइंटिस्ट, यूरोप इंडस्ट्री</div>
+      </div>
+    </div>
+    <div class="logos-list">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_France.svg" alt="फ्रांस" title="फ्रांस" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="ब्राज़ील" title="ब्राज़ील" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_South_Africa.svg" alt="दक्षिण अफ्रीका" title="दक्षिण अफ्रीका" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_China.svg" alt="चीन" title="चीन" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="अमेरिका" title="अमेरिका" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_Nigeria.svg" alt="नाइजीरिया" title="नाइजीरिया" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="स्पेन" title="स्पेन" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Germany.svg" alt="जर्मनी" title="जर्मनी" />
+    </div>
+  </section>
+
+  <!-- प्रमुख आँकड़े -->
+  <section class="key-stats">
+    <h2>प्रमुख आँकड़े</h2>
+    <div class="stats-grid">
+      <div class="stat-block">200+<span class="stat-label">AI मॉडल</span></div>
+      <div class="stat-block">25<span class="stat-label">उद्योग</span></div>
+      <div class="stat-block">20<span class="stat-label">भाषाएँ</span></div>
+      <div class="stat-block">100%<span class="stat-label">संप्रभुता और लोकल</span></div>
+      <div class="stat-block">0<span class="stat-label">डेटा लीक</span></div>
+    </div>
+  </section>
+
+  <!-- सामाजिक प्रमाण -->
+  <div class="social-proof">
+    AI विशेषज्ञों, छोटे और बड़े व्यवसायों द्वारा पहले ही परीक्षण किया जा चुका है।<br>
+    <span style="color:#1e90ff;">वैश्विक वेटिंग लिस्ट में शामिल हों!</span>
+  </div>
+
+  <!-- जल्द आ रहा है + काउंटडाउन -->
+  <div class="coming-soon">
+    <span>मुफ़्त मॉडल <span class="countdown" id="countdown"></span> में उपलब्ध होंगे</span>
+  </div>
+
+  <!-- फॉर्म और फ़ायदे -->
+  <main>
+    <form action="https://formspree.io/f/xyyrlzya" method="POST" autocomplete="on">
+      <label for="name">नाम</label>
+      <input id="name" name="नाम" type="text" placeholder="आपका नाम" autocomplete="given-name" required>
+      <label for="email">ईमेल</label>
+      <input id="email" name="ईमेल" type="email" placeholder="आपका ईमेल" autocomplete="email" required>
+      <label for="lang">पसंदीदा भाषा</label>
+      <select id="lang" name="पसंदीदा भाषा" required onchange="openLangPage(this)">
+        <option value="">भाषा चुनें...</option>
+        <option value="fr">🇫🇷 फ़्रेंच</option>
+        <option value="en">🇬🇧 अंग्रेज़ी</option>
+        <option value="es">🇪🇸 स्पेनिश</option>
+        <option value="de">🇩🇪 जर्मन</option>
+        <option value="it">🇮🇹 इतालवी</option>
+        <option value="pt">🇵🇹 पुर्तगाली</option>
+        <option value="ar">🇸🇦 अरबी</option>
+        <option value="zh">🇨🇳 चीनी</option>
+        <option value="ru">🇷🇺 रूसी</option>
+        <option value="ja">🇯🇵 जापानी</option>
+        <option value="ko">🇰🇷 कोरियाई</option>
+        <option value="hi">🇮🇳 हिन्दी</option>
+        <option value="tr">🇹🇷 तुर्की</option>
+        <option value="cr">🇭🇹 क्रेओल</option>
+        <option value="vi">🇻🇳 वियतनामी</option>
+        <option value="pl">🇵🇱 पोलिश</option>
+        <option value="nl">🇳🇱 डच</option>
+        <option value="ro">🇷🇴 रोमानियाई</option>
+        <option value="el">🇬🇷 ग्रीक</option>
+        <option value="th">🇹🇭 थाई</option>
+      </select>
+      <label for="company">कंपनी (वैकल्पिक)</label>
+      <input id="company" name="कंपनी" type="text" placeholder="आपकी कंपनी का नाम">
+      <label for="usage">इच्छित उपयोग (वैकल्पिक)</label>
+      <select id="usage" name="इच्छित उपयोग">
+        <option value="">चुनें...</option>
+        <option>मुफ़्त परीक्षण</option>
+        <option>व्यवसाय / टीम</option>
+        <option>साझेदारी</option>
+        <option>शिक्षा / प्रशिक्षण</option>
+        <option>अन्य</option>
+      </select>
+      <label class="consent">
+        <input type="checkbox" name="सहमति" required>
+        मैं सहमत हूँ कि ErnestMind मुझे एक्सक्लूसिव एक्सेस के लिए संपर्क कर सकता है (कोई स्पैम नहीं, पूरी गोपनीयता)।
+      </label>
+      <button type="submit">एक्सक्लूसिव एक्सेस प्राप्त करें</button>
+    </form>
+    <div class="benefits">
+      <div class="benefit"><span class="icon">🌍</span>20+ भाषाएँ</div>
+      <div class="benefit"><span class="icon">🔒</span>100% लोकल और गोपनीय</div>
+      <div class="benefit"><span class="icon">🏢</span>25 उद्योग</div>
+      <div class="benefit"><span class="icon">🚀</span>तेज़ और आसान</div>
+      <div class="benefit"><span class="icon">🤝</span>सहयोग के लिए खुला</div>
+    </div>
+    <div style="text-align:center; margin-top:18px; color:#888;">
+      मदद चाहिए? संपर्क करें: <a href="mailto:parisien.data@gmail.com" style="color:#1e90ff;text-decoration:underline;">parisien.data@gmail.com</a>
+    </div>
+  </main>
+
+  <!-- गोपनीयता / संप्रभुता -->
+  <section class="security-block">
+    <h2>पूरी गोपनीयता और संप्रभुता</h2>
+    <ul>
+      <li>100% लोकल प्रोसेसिंग: कोई भी डेटा क्लाउड में नहीं जाता।</li>
+      <li>GDPR अनुरूप, यूरोपीय सर्टिफिकेट जल्द आ रहे हैं।</li>
+      <li>परीक्षण योग्य AI मॉडल, पारदर्शी लॉग, कोई बैकडोर नहीं।</li>
+      <li>संवेदनशील उद्योगों के लिए आदर्श: स्वास्थ्य, वित्त, उद्योग, शिक्षा आदि।</li>
+      <li>स्वतंत्र AI इंजीनियरों से विशेषज्ञ समर्थन।</li>
+    </ul>
+  </section>
+
+  <!-- निवेशकों / साझेदारों के लिए -->
+  <section class="investor-call">
+    <h2>निवेशक, बड़े ग्राहक, रणनीतिक साझेदार:</h2>
+    <div>क्या आप संप्रभु AI क्रांति में शामिल होना चाहेंगे?<br>
+      <a href="mailto:parisien.data@gmail.com?subject=ErnestMind%20Partnership">पर्सनल डेमो या मीटिंग का अनुरोध करें</a>
+    </div>
+  </section>
+
+  <!-- अंतरराष्ट्रीयकरण / विश्व मानचित्र -->
+  <section class="international-block">
+    <h2>सबसे अंतरराष्ट्रीय AI प्लेटफ़ॉर्म</h2>
+    <img class="world-map" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/BlankMap-World-noborders.png/800px-BlankMap-World-noborders.png" alt="ErnestMind वर्ल्ड मैप">
+    <div style="margin-top:7px;font-size:1.05em;">ErnestMind पहले से ही दुनिया भर में 20+ भाषाओं में काम करता है।</div>
+    <div class="flags">
+      <span class="flag">🇫🇷</span><span class="flag">🇬🇧</span><span class="flag">🇪🇸</span><span class="flag">🇩🇪</span><span class="flag">🇮🇹</span><span class="flag">🇵🇹</span>
+      <span class="flag">🇨🇳</span><span class="flag">🇷🇺</span><span class="flag">🇺🇸</span><span class="flag">🇯🇵</span><span class="flag">🇰🇷</span>
+      <span class="flag">🇸🇦</span><span class="flag">🇮🇳</span><span class="flag">🇹🇷</span><span class="flag">🇧🇷</span><span class="flag">🇳🇬</span><span class="flag">🇻🇳</span>
+    </div>
+  </section>
+
+  <!-- रोडमैप / विजन -->
+  <section class="roadmap-block">
+    <h2>हमारा विजन: ErnestMind 2025-2026</h2>
+    <ul>
+      <li>1000+ लोकल और उद्योग-विशिष्ट AI मॉडल</li>
+      <li>अमेरिका, एशिया, अफ्रीका, मिडिल ईस्ट के बाज़ारों में विस्तार</li>
+      <li>वैश्विक संप्रभु AI मॉडल मार्केटप्लेस</li>
+      <li>ISO/GDPR/यूरोप सर्टिफिकेशन और सरकारी साझेदारी</li>
+      <li>सार्वभौमिक इंटीग्रेशन के लिए API और SDK</li>
+    </ul>
+  </section>
+
+  <!-- मीडिया-किट / प्रेस-किट -->
+  <section class="media-kit-block">
+    <h2>मीडिया-किट, प्रेस और दस्तावेज़</h2>
+    <div>पत्रकारों, इन्फ्लुएंसरों, साझेदारों: ErnestMind के बारे में पढ़ें और हमारा पूरा मीडिया-किट डाउनलोड करें।</div>
+    <a href="#" download>📥 मीडिया-किट डाउनलोड करें (PDF)</a>
+  </section>
+
+  <!-- सपोर्ट विजेट / चैटबोट -->
+  <section class="chatbot-widget">
+    <span class="bot-icon">🤖</span>
+    <span>कोई सवाल? हमारे AI से बात करें या इंसान से डेमो बुक करें!</span>
+    <a href="mailto:parisien.data@gmail.com?subject=ErnestMind%20Question">सीधा संपर्क करें</a>
+    <a href="#" onclick="alert('चैटबोट जल्द ही उपलब्ध होगा!');return false;">चैटबोट शुरू करें</a>
+  </section>
+
+  <!-- ErnestMind के बारे में -->
+  <div class="about">
+    <h2>ErnestMind के बारे में</h2>
+    <p>
+      हमारी टीम दुनिया का सबसे आधुनिक और सुलभ संप्रभु AI बना रही है — लोकल बहुभाषी मॉडल और पूर्ण गोपनीयता के साथ।<br>
+      ErnestMind सभी उद्योगों के लिए AI की पहुँच में क्रांति लाने के लिए प्रतिबद्ध है।<br>
+      AI में भरोसे, उत्पादकता और नवाचार के नए युग में शामिल हों!
+    </p>
+  </div>
+
+  <!-- अक्सर पूछे जाने वाले प्रश्न -->
+  <div class="faq-section">
+    <h2>अक्सर पूछे जाने वाले प्रश्न</h2>
+    <ul class="faq-list">
+      <li>
+        <span class="faq-q">मैं मॉडल कब आज़मा पाऊँगा?</span>
+        <span class="faq-a">3 दिन बाद: पहली मुफ़्त मॉडल सभी रजिस्ट्रेशन वालों के लिए उपलब्ध होगी।</span>
+      </li>
+      <li>
+        <span class="faq-q">क्या यह वाकई 100% लोकल है?</span>
+        <span class="faq-a">हाँ, ErnestMind गारंटी देता है कि आपका डेटा और प्रोसेस आपके सर्वर/डिवाइस पर ही रहेगा, क्लाउड में नहीं जाएगा।</span>
+      </li>
+      <li>
+        <span class="faq-q">यह किनके लिए है?</span>
+        <span class="faq-a">कंपनियों, विशेषज्ञों, शिक्षकों, छात्रों, व्यक्तियों और उन सभी के लिए जो अपना AI कंट्रोल करना चाहते हैं।</span>
+      </li>
+      <li>
+        <span class="faq-q">क्या मैं साझेदार बन सकता हूँ?</span>
+        <span class="faq-a">हाँ! ErnestMind दुनिया भर में साझेदार ढूंढ रहा है। फॉर्म में रुचि दर्ज करें या सीधे संपर्क करें।</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- फुटर -->
+  <footer>
+    <div>
+      © 2025 ErnestMind &nbsp;|&nbsp; 
+      <a href="mailto:parisien.data@gmail.com">संपर्क करें</a>
+      <span class="footer-links">
+        &nbsp;|&nbsp;
+        <a href="#">कानूनी जानकारी</a>
+        &nbsp;|&nbsp;
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        &nbsp;|&nbsp;
+        <a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- काउंटडाउन और भाषा स्विचिंग -->
+  <script>
+    // लॉन्च दिनांक: 3 दिन बाद
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 3);
+    launchDate.setHours(0, 0, 0, 0);
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = launchDate - now;
+      if (diff < 0) diff = 0;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      let text = "";
+      if (days > 0) text += days + " दिन ";
+      text += String(hours).padStart(2, "0") + "घंटे ";
+      text += String(minutes).padStart(2, "0") + "मिनट ";
+      text += String(seconds).padStart(2, "0") + "सेकंड";
+      document.getElementById("countdown").textContent = text;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // भाषा स्विचिंग: अनुवादित पेज खोलें
+    function openLangPage(sel) {
+      const val = sel.value;
+      if (val && val !== "") {
+        const urls = {
+          fr: "index.html",
+          en: "index_en.html",
+          es: "index_es.html",
+          de: "index_de.html",
+          it: "index_it.html",
+          pt: "index_pt.html",
+          ar: "index_ar.html",
+          zh: "index_zh.html",
+          ru: "index_ru.html",
+          ja: "index_ja.html",
+          ko: "index_ko.html",
+          hi: "index_hi.html",
+          tr: "index_tr.html",
+          cr: "index_cr.html",
+          vi: "index_vi.html",
+          pl: "index_pl.html",
+          nl: "index_nl.html",
+          ro: "index_ro.html",
+          el: "index_el.html",
+          th: "index_th.html"
+        };
+        if (urls[val]) {
+          window.open(urls[val], "_self");
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>ErnestMind – 本地多语言人工智能革命</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="100%本地和多语言人工智能的革命。200+AI模型，完全保密，25个行业，20种语言。免费体验ErnestMind！">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+  <style>
+    body, html { direction: ltr; }
+    :root {
+      --primary: #1e90ff;
+      --primary-dark: #0065b3;
+      --bg: #f7faff;
+      --white: #fff;
+      --text: #1a1a1a;
+      --border: #e5ecf6;
+      --accent: #00c9a7;
+      --footer-bg: #1e90ff;
+      --footer-text: #fff;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    .lang-select-bar {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      border-radius: 11px;
+      padding: 5px 16px 5px 10px;
+      box-shadow: 0 2px 10px #1e90ff22;
+      font-size: 1.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-select-bar label {
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #1e90ff;
+    }
+    .lang-select-bar select {
+      font-size: 1.1em;
+      border-radius: 7px;
+      padding: 4px 24px 4px 12px;
+      border: 1px solid var(--border);
+      background: #fafdff;
+      color: #1a1a1a;
+      font-family: inherit;
+      margin-left: 2px;
+    }
+    .lang-select-bar .flag {
+      font-size: 1.15em;
+      margin-right: 3px;
+      margin-left: 2px;
+    }
+    header {
+      text-align: center;
+      padding: 56px 10px 20px 10px;
+      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--white);
+      position: relative;
+    }
+    .logo-link img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 16px;
+      transition: transform 0.2s;
+    }
+    .logo-link:hover img {
+      transform: scale(1.08) rotate(-3deg);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0 0 18px 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px #1e90ff40;
+    }
+    .subtitle {
+      font-size: 1.25em;
+      margin-bottom: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 8px #1e90ff28;
+    }
+    .visual {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 22px 0 10px 0;
+    }
+    .visual img, .visual svg {
+      height: 54px;
+      width: auto;
+      opacity: 0.98;
+      filter: drop-shadow(0 2px 12px #1e90ff70);
+    }
+    /* Sections */
+    section, main, footer {
+      margin-bottom: 0px;
+    }
+    section {
+      box-sizing: border-box;
+      max-width: 700px;
+      margin: 36px auto 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 28px 18px 21px 18px;
+      font-size: 1.14em;
+      text-align: center;
+    }
+    section h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.25em;
+      letter-spacing: 0.7px;
+      font-weight: 700;
+    }
+    .unique-list, .security-block ul, .roadmap-block ul {
+      text-align: left;
+      margin: 0 auto 0 auto;
+      max-width: 470px;
+      padding-left: 20px;
+    }
+    .unique-list li, .security-block li, .roadmap-block li {
+      margin: 10px 0;
+      font-weight: 500;
+      font-size: 1.08em;
+      list-style: disc;
+    }
+    /* Testimonials / Logos */
+    .testimonials-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .testimonial {
+      background: #fafdff;
+      border-radius: 12px;
+      padding: 14px 15px;
+      font-size: 1.07em;
+      box-shadow: 0 1px 7px #1e90ff13;
+      max-width: 270px;
+      min-width: 190px;
+      flex: 1 1 200px;
+      text-align: left;
+      border-left: 4px solid var(--accent);
+    }
+    .testimonial .author {
+      font-size: 0.97em;
+      color: #888;
+      margin-top: 6px;
+    }
+    .logos-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .logos-list img {
+      height: 32px;
+      opacity: 0.82;
+      filter: grayscale(0.6);
+      transition: opacity 0.2s;
+    }
+    .logos-list img:hover {
+      opacity: 1;
+      filter: none;
+    }
+    /* Key stats */
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .stat-block {
+      background: #f3f8ff;
+      border-radius: 12px;
+      padding: 18px 24px;
+      box-shadow: 0 1px 8px #1e90ff14;
+      font-size: 1.25em;
+      color: #1e90ff;
+      font-weight: 700;
+      min-width: 140px;
+      max-width: 190px;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      display: block;
+      font-size: 0.85em;
+      color: #2b3a4a;
+      font-weight: 500;
+      margin-top: 7px;
+      letter-spacing: 0.2px;
+    }
+    .investor-call {
+      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.18em;
+      margin-bottom: 12px;
+      margin-top: 35px;
+    }
+    .investor-call a {
+      background: #fff;
+      color: var(--primary-dark);
+      font-weight: 600;
+      border-radius: 7px;
+      padding: 9px 20px;
+      text-decoration: none;
+      margin-top: 11px;
+      display: inline-block;
+      transition: background 0.17s;
+    }
+    .investor-call a:hover {
+      background: #1e90ff;
+      color: #fff;
+    }
+    .international-block .world-map {
+      width: 98%;
+      max-width: 400px;
+      margin: 12px auto 0 auto;
+      display: block;
+      opacity: 0.96;
+      border-radius: 10px;
+      box-shadow: 0 2px 18px #1e90ff14;
+    }
+    .international-block .flags {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .international-block .flag {
+      font-size: 1.45em;
+      margin: 0 2px;
+    }
+    .media-kit-block a {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 7px;
+      padding: 10px 28px;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 1.09em;
+      box-shadow: 0 2px 8px #1e90ff22;
+    }
+    .media-kit-block a:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .chatbot-widget {
+      background: #fafdff;
+      border-left: 5px solid var(--primary);
+      color: #1e90ff;
+      margin-top: 24px;
+      font-size: 1.14em;
+      text-align: left;
+      padding: 20px 18px;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .chatbot-widget .bot-icon {
+      font-size: 2.1em;
+    }
+    .chatbot-widget a {
+      color: #fff;
+      background: var(--primary);
+      border-radius: 7px;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 10px;
+      transition: background 0.17s;
+    }
+    .chatbot-widget a:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+    }
+    .social-proof, .coming-soon {
+      max-width: 700px;
+      margin: 24px auto 0 auto;
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 18px 18px 15px 18px;
+      font-size: 1.13em;
+      text-align: center;
+    }
+    .social-proof {
+      margin-top: 0;
+      font-weight: 600;
+      color: var(--primary-dark);
+      border-left: 5px solid var(--accent);
+    }
+    .coming-soon {
+      margin-top: 14px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+      font-weight: 600;
+      font-size: 1.14em;
+      letter-spacing: 0.4px;
+      box-shadow: 0 4px 22px #00c9a733;
+      border-left: none;
+      border-radius: 14px 14px 14px 14px;
+      padding: 18px 18px 18px 18px;
+    }
+    .countdown {
+      display: inline-block;
+      font-size: 1.28em;
+      color: #fff;
+      font-weight: bold;
+      padding: 0 8px;
+      letter-spacing: 1px;
+      background: #0065b3cc;
+      border-radius: 7px;
+      margin: 0 8px;
+    }
+    main {
+      max-width: 700px;
+      margin: 36px auto 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 8px 36px #1e90ff12, 0 1.5px 0 var(--border);
+      padding: 32px 18px 24px 18px;
+      position: relative;
+      z-index: 2;
+    }
+    form {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    form label {
+      font-weight: 500;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1em;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 2px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+      font-size: 1em;
+      background: #fafdff;
+      transition: border 0.2s;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 1.5px solid var(--primary);
+      outline: none;
+      background: #f7fbff;
+    }
+    button[type="submit"] {
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: 700;
+      margin-top: 2px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #1e90ff30;
+      transition: background 0.23s, transform 0.18s;
+      letter-spacing: 0.5px;
+    }
+    button[type="submit"]:hover {
+      background: var(--accent);
+      color: #1a1a1a;
+      transform: scale(1.03);
+    }
+    .consent {
+      font-size: 0.98em;
+      color: #444;
+      margin-top: -7px;
+      margin-bottom: 1px;
+    }
+    .benefits {
+      margin: 36px 0 24px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .benefit {
+      flex: 1 1 190px;
+      background: #f3f8ff;
+      border-radius: 12px;
+      padding: 18px 12px;
+      box-shadow: 0 1px 8px #1e90ff14;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 1.08em;
+      font-weight: 500;
+      min-width: 165px;
+      max-width: 260px;
+    }
+    .benefit .icon {
+      font-size: 1.45em;
+      background: #e3f5ff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about, .faq-section {
+      background: #fafdff;
+      margin-top: 26px;
+      border-radius: 14px;
+      box-shadow: 0 2px 18px #1e90ff10;
+      padding: 22px 18px 18px 18px;
+      color: #26384d;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .about h2, .faq-section h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      margin-bottom: 9px;
+      letter-spacing: 1px;
+      font-size: 1.18em;
+    }
+    .faq-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .faq-list li {
+      margin-bottom: 13px;
+      padding-left: 0;
+    }
+    .faq-q {
+      color: var(--primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .faq-a {
+      color: #26384d;
+      font-size: 0.99em;
+      margin-left: 8px;
+    }
+    /* Footer */
+    footer {
+      margin-top: 44px;
+      padding: 28px 4vw 20px 4vw;
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      font-size: 1em;
+      border-radius: 16px 16px 0 0;
+      letter-spacing: 0.1px;
+    }
+    .footer-links {
+      margin: 10px 0 0 0;
+      font-size: 0.99em;
+    }
+    .footer-links a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 10px;
+      transition: color 0.16s;
+    }
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 900px) {
+      main, section, .about, .faq-section, .social-proof, .coming-soon { max-width: 97vw; }
+    }
+    @media (max-width: 600px) {
+      header { padding: 36px 5px 10px 5px; }
+      h1 { font-size: 1.18em; }
+      .subtitle { font-size: 1em; }
+      .visual img, .visual svg { height: 32px; }
+      main, section, .about, .faq-section { padding: 14px 3vw 10px 3vw; }
+      .benefit { min-width: 120px; }
+      .lang-select-bar { top: 5px; left: 2px; font-size: 0.99em;}
+    }
+    @media (max-width: 420px) {
+      h1 { font-size: 1em;}
+      main, section, .about, .faq-section { padding: 10px 2vw; }
+    }
+    ::-webkit-scrollbar { width: 8px; background: #e6f3fd; }
+    ::-webkit-scrollbar-thumb { background: #bee6ff; border-radius: 8px;}
+  </style>
+</head>
+<body>
+  <!-- 语言选择栏 带国旗 -->
+  <div class="lang-select-bar">
+    <label for="lang-top">🌐</label>
+    <span class="flag">🇨🇳</span>
+    <select id="lang-top" onchange="openLangPage(this)">
+      <option value="">语言 / Language</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="pt">🇵🇹 Português</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="cr">🇭🇹 Kréyol</option>
+      <option value="vi">🇻🇳 Tiếng Việt</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="ro">🇷🇴 Română</option>
+      <option value="el">🇬🇷 Ελληνικά</option>
+      <option value="th">🇹🇭 ไทย</option>
+    </select>
+  </div>
+  <header>
+    <a href="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" class="logo-link" target="_blank" rel="noopener">
+      <img src="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" alt="ErnestMind标志" />
+    </a>
+    <h1>100%本地和多语言人工智能革命</h1>
+    <div class="subtitle">
+      超过200个AI模型，完全保密，25个行业，20种语言。立即免费体验！
+    </div>
+    <div class="visual">
+      <img src="https://cdn-icons-png.flaticon.com/512/5948/5948658.png" alt="人工智能" title="人工智能" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1484/1484834.png" alt="隐私" title="隐私" />
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="世界与语言" title="世界与语言" />
+    </div>
+  </header>
+
+  <!-- 为什么ErnestMind独一无二 -->
+  <section class="unique-section">
+    <h2>为什么ErnestMind独一无二？</h2>
+    <ul class="unique-list">
+      <li>唯一100%主权、多语言、本地和完全保密的人工智能平台：您的数据绝不会离开您的组织。</li>
+      <li>200+专为25个行业定制的模型，涵盖医疗、工业、金融、教育等。</li>
+      <li>专利技术：我们的免费模型优于行业巨头的付费产品。</li>
+      <li>超快、可定制、可扩展，专为全球推广而设计，即使是小众语言也支持。</li>
+    </ul>
+  </section>
+
+  <!-- 用户评价 / 合作标志 -->
+  <section class="testimonials-logos">
+    <h2>他们已经体验了ErnestMind的革命</h2>
+    <div class="testimonials-list">
+      <div class="testimonial">
+        “唯一真正尊重我们保密需求并理解我们行业的AI工具。”
+        <div class="author">— CTO，法国健康集团</div>
+      </div>
+      <div class="testimonial">
+        “ErnestMind在多语言方面的强大令人惊叹。新的全球标准。”
+        <div class="author">— CEO，非洲科技</div>
+      </div>
+      <div class="testimonial">
+        “前所未有的定制化水平，是真正主权的Big Tech替代方案。”
+        <div class="author">— 数据科学家，欧洲工业</div>
+      </div>
+    </div>
+    <div class="logos-list">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_France.svg" alt="法国" title="法国" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="巴西" title="巴西" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_South_Africa.svg" alt="南非" title="南非" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_China.svg" alt="中国" title="中国" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="美国" title="美国" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_Nigeria.svg" alt="尼日利亚" title="尼日利亚" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="西班牙" title="西班牙" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Germany.svg" alt="德国" title="德国" />
+    </div>
+  </section>
+
+  <!-- 主要数据 -->
+  <section class="key-stats">
+    <h2>主要数据</h2>
+    <div class="stats-grid">
+      <div class="stat-block">200+<span class="stat-label">AI模型</span></div>
+      <div class="stat-block">25<span class="stat-label">行业</span></div>
+      <div class="stat-block">20<span class="stat-label">本地语言</span></div>
+      <div class="stat-block">100%<span class="stat-label">主权&本地</span></div>
+      <div class="stat-block">0<span class="stat-label">数据泄露</span></div>
+    </div>
+  </section>
+
+  <!-- 社会证明 -->
+  <div class="social-proof">
+    已被AI专家、中小企业和大型集团测试。<br>
+    <span style="color:#1e90ff;">立即加入全球等待名单！</span>
+  </div>
+
+  <!-- 即将上线 + 倒计时 -->
+  <div class="coming-soon">
+    <span>免费模型将于 <span class="countdown" id="countdown"></span> 后开放</span>
+  </div>
+
+  <!-- 表单和优势 -->
+  <main>
+    <form action="https://formspree.io/f/xyyrlzya" method="POST" autocomplete="on">
+      <label for="name">姓名</label>
+      <input id="name" name="姓名" type="text" placeholder="您的姓名" autocomplete="given-name" required>
+      <label for="email">电子邮件</label>
+      <input id="email" name="电子邮件" type="email" placeholder="您的电子邮件" autocomplete="email" required>
+      <label for="lang">首选语言</label>
+      <select id="lang" name="首选语言" required onchange="openLangPage(this)">
+        <option value="">请选择语言...</option>
+        <option value="fr">🇫🇷 法语</option>
+        <option value="en">🇬🇧 英语</option>
+        <option value="es">🇪🇸 西班牙语</option>
+        <option value="de">🇩🇪 德语</option>
+        <option value="it">🇮🇹 意大利语</option>
+        <option value="pt">🇵🇹 葡萄牙语</option>
+        <option value="ar">🇸🇦 阿拉伯语</option>
+        <option value="zh">🇨🇳 中文</option>
+        <option value="ru">🇷🇺 俄语</option>
+        <option value="ja">🇯🇵 日语</option>
+        <option value="ko">🇰🇷 韩语</option>
+        <option value="hi">🇮🇳 印地语</option>
+        <option value="tr">🇹🇷 土耳其语</option>
+        <option value="cr">🇭🇹 克里奥尔语</option>
+        <option value="vi">🇻🇳 越南语</option>
+        <option value="pl">🇵🇱 波兰语</option>
+        <option value="nl">🇳🇱 荷兰语</option>
+        <option value="ro">🇷🇴 罗马尼亚语</option>
+        <option value="el">🇬🇷 希腊语</option>
+        <option value="th">🇹🇭 泰语</option>
+      </select>
+      <label for="company">公司（可选）</label>
+      <input id="company" name="公司" type="text" placeholder="您的公司名称">
+      <label for="usage">预期用途（可选）</label>
+      <select id="usage" name="预期用途">
+        <option value="">请选择...</option>
+        <option>免费试用</option>
+        <option>企业 / 团队</option>
+        <option>合作伙伴</option>
+        <option>教育 / 培训</option>
+        <option>其他</option>
+      </select>
+      <label class="consent">
+        <input type="checkbox" name="同意" required>
+        我同意被ErnestMind联系以获得专属访问权（无广告，完全保密）。
+      </label>
+      <button type="submit">获取专属访问权</button>
+    </form>
+    <div class="benefits">
+      <div class="benefit"><span class="icon">🌍</span>20+语言</div>
+      <div class="benefit"><span class="icon">🔒</span>100%本地&保密</div>
+      <div class="benefit"><span class="icon">🏢</span>25行业</div>
+      <div class="benefit"><span class="icon">🚀</span>快速易用</div>
+      <div class="benefit"><span class="icon">🤝</span>开放合作</div>
+    </div>
+    <div style="text-align:center; margin-top:18px; color:#888;">
+      需要帮助？联系：<a href="mailto:parisien.data@gmail.com" style="color:#1e90ff;text-decoration:underline;">parisien.data@gmail.com</a>
+    </div>
+  </main>
+
+  <!-- 保密 / 主权 -->
+  <section class="security-block">
+    <h2>完全保密 & 主权</h2>
+    <ul>
+      <li>100%本地处理：绝不上传云端。</li>
+      <li>符合GDPR，欧洲认证即将推出。</li>
+      <li>AI模型可审计，日志透明，无后门。</li>
+      <li>适用于敏感行业：医疗、金融、工业、教育等。</li>
+      <li>由主权AI工程师提供专家支持。</li>
+    </ul>
+  </section>
+
+  <!-- 投资者 / 合作伙伴 -->
+  <section class="investor-call">
+    <h2>投资者、大客户、战略合作伙伴：</h2>
+    <div>想加入主权AI革命？<br>
+      <a href="mailto:parisien.data@gmail.com?subject=ErnestMind合作">申请专属演示或会议</a>
+    </div>
+  </section>
+
+  <!-- 国际化 / 世界地图 -->
+  <section class="international-block">
+    <h2>最国际化的AI平台</h2>
+    <img class="world-map" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/BlankMap-World-noborders.png/800px-BlankMap-World-noborders.png" alt="ErnestMind世界地图">
+    <div style="margin-top:7px;font-size:1.05em;">ErnestMind已原生支持20多种语言，覆盖全球各大洲。</div>
+    <div class="flags">
+      <span class="flag">🇫🇷</span><span class="flag">🇬🇧</span><span class="flag">🇪🇸</span><span class="flag">🇩🇪</span><span class="flag">🇮🇹</span><span class="flag">🇵🇹</span>
+      <span class="flag">🇨🇳</span><span class="flag">🇷🇺</span><span class="flag">🇺🇸</span><span class="flag">🇯🇵</span><span class="flag">🇰🇷</span>
+      <span class="flag">🇸🇦</span><span class="flag">🇮🇳</span><span class="flag">🇹🇷</span><span class="flag">🇧🇷</span><span class="flag">🇳🇬</span><span class="flag">🇻🇳</span>
+    </div>
+  </section>
+
+  <!-- 路线图 / 愿景 -->
+  <section class="roadmap-block">
+    <h2>我们的愿景：ErnestMind 2025-2026</h2>
+    <ul>
+      <li>1000+本地和行业专属AI模型</li>
+      <li>拓展美洲、亚洲、非洲、中东市场</li>
+      <li>全球主权AI模型市场</li>
+      <li>ISO/GDPR/欧洲认证及公共合作</li>
+      <li>API及SDK全面集成</li>
+    </ul>
+  </section>
+
+  <!-- 媒体包 / 新闻资料 -->
+  <section class="media-kit-block">
+    <h2>媒体包、新闻资料与文档</h2>
+    <div>媒体、影响者、合作伙伴：了解ErnestMind并下载我们的完整资料包。</div>
+    <a href="#" download>📥 下载媒体包 (PDF)</a>
+  </section>
+
+  <!-- 智能客服 / 聊天机器人 -->
+  <section class="chatbot-widget">
+    <span class="bot-icon">🤖</span>
+    <span>有问题？与我们的AI聊天或预约真人演示！</span>
+    <a href="mailto:parisien.data@gmail.com?subject=ErnestMind问题">直接联系</a>
+    <a href="#" onclick="alert('聊天机器人功能即将上线！');return false;">启动聊天机器人</a>
+  </section>
+
+  <!-- 关于ErnestMind -->
+  <div class="about">
+    <h2>关于ErnestMind</h2>
+    <p>
+      我们的团队正在打造全球最先进、最易用的主权AI，拥有本地多语言模型和绝对隐私。<br>
+      ErnestMind致力于为全球所有行业带来AI创新和变革。<br>
+      加入我们，共创AI信任、性能与创新新时代！
+    </p>
+  </div>
+
+  <!-- 常见问题 -->
+  <div class="faq-section">
+    <h2>常见问题</h2>
+    <ul class="faq-list">
+      <li>
+        <span class="faq-q">我什么时候可以体验这些模型？</span>
+        <span class="faq-a">3天后：首批免费模型将向所有已注册用户开放。</span>
+      </li>
+      <li>
+        <span class="faq-q">真的100%本地化吗？</span>
+        <span class="faq-a">是的，ErnestMind确保您的数据和处理仅在您的服务器或设备上，绝不上传云端。</span>
+      </li>
+      <li>
+        <span class="faq-q">适合哪些用户？</span>
+        <span class="faq-a">企业、专家、培训师、学生、个人，以及所有希望控制自己AI的行业。</span>
+      </li>
+      <li>
+        <span class="faq-q">我可以成为合作伙伴吗？</span>
+        <span class="faq-a">可以！ErnestMind正在全球范围内寻找合作伙伴。请在表单中注明或直接联系我们。</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <div>
+      © 2025 ErnestMind &nbsp;|&nbsp; 
+      <a href="mailto:parisien.data@gmail.com">联系</a>
+      <span class="footer-links">
+        &nbsp;|&nbsp;
+        <a href="#">法律声明</a>
+        &nbsp;|&nbsp;
+        <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        &nbsp;|&nbsp;
+        <a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- 倒计时与语言切换 -->
+  <script>
+    // 上线日期：3天后
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 3);
+    launchDate.setHours(0, 0, 0, 0);
+
+    function updateCountdown() {
+      const now = new Date();
+      let diff = launchDate - now;
+      if (diff < 0) diff = 0;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      let text = "";
+      if (days > 0) text += days + "天 ";
+      text += String(hours).padStart(2, "0") + "时 ";
+      text += String(minutes).padStart(2, "0") + "分 ";
+      text += String(seconds).padStart(2, "0") + "秒";
+      document.getElementById("countdown").textContent = text;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 语言选择：打开翻译页面
+    function openLangPage(sel) {
+      const val = sel.value;
+      if (val && val !== "") {
+        const urls = {
+          fr: "index.html",
+          en: "index_en.html",
+          es: "index_es.html",
+          de: "index_de.html",
+          it: "index_it.html",
+          pt: "index_pt.html",
+          ar: "index_ar.html",
+          zh: "index_zh.html",
+          ru: "index_ru.html",
+          ja: "index_ja.html",
+          ko: "index_ko.html",
+          hi: "index_hi.html",
+          tr: "index_tr.html",
+          cr: "index_cr.html",
+          vi: "index_vi.html",
+          pl: "index_pl.html",
+          nl: "index_nl.html",
+          ro: "index_ro.html",
+          el: "index_el.html",
+          th: "index_th.html"
+        };
+        if (urls[val]) {
+          window.open(urls[val], "_self");
+        }
+      }
+    }
+  </script>
+</body>
+</html>
