@@ -2,536 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ErnestMind – The Local & Multilingual AI Revolution</title>
+  <title>ErnestMind – The AI Revolution Starts Here</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The revolution of 100% local and multilingual Artificial Intelligence. 200+ AI models, total confidentiality, 25 industries, 20 languages. Try ErnestMind for free!">
+  <meta name="description" content="The 100% local and multilingual Artificial Intelligence Revolution. 200+ models, total privacy. ErnestMind: AI without limits.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;700;500;400&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1e90ff;
-      --primary-dark: #0065b3;
-      --bg: #f7faff;
-      --white: #fff;
-      --text: #1a1a1a;
-      --border: #e5ecf6;
-      --accent: #00c9a7;
-      --footer-bg: #1e90ff;
-      --footer-text: #fff;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-    .lang-select-bar {
-      position: fixed;
-      top: 18px;
-      left: 18px;
-      z-index: 100;
-      background: rgba(255,255,255,0.97);
-      border-radius: 11px;
-      padding: 5px 16px 5px 10px;
-      box-shadow: 0 2px 10px #1e90ff22;
-      font-size: 1.05em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .lang-select-bar label {
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #1e90ff;
-    }
-    .lang-select-bar select {
-      font-size: 1.1em;
-      border-radius: 7px;
-      padding: 4px 24px 4px 12px;
-      border: 1px solid var(--border);
-      background: #fafdff;
-      color: #1a1a1a;
-      font-family: inherit;
-      margin-left: 2px;
-    }
-    .lang-select-bar .flag {
-      font-size: 1.15em;
-      margin-right: 3px;
-      margin-left: 2px;
-    }
-    header {
-      text-align: center;
-      padding: 56px 10px 20px 10px;
-      background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
-      color: var(--white);
-      position: relative;
-    }
-    .logo-link img {
-      width: 110px;
-      height: auto;
-      margin-bottom: 16px;
-      transition: transform 0.2s;
-    }
-    .logo-link:hover img {
-      transform: scale(1.08) rotate(-3deg);
-    }
-    h1 {
-      font-size: 2.5em;
-      margin: 0 0 18px 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      text-shadow: 0 2px 10px #1e90ff40;
-    }
-    .subtitle {
-      font-size: 1.25em;
-      margin-bottom: 18px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      line-height: 1.4;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      text-shadow: 0 2px 8px #1e90ff28;
-    }
-    .visual {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      margin: 22px 0 10px 0;
-    }
-    .visual img, .visual svg {
-      height: 54px;
-      width: auto;
-      opacity: 0.98;
-      filter: drop-shadow(0 2px 12px #1e90ff70);
-    }
-    /* Sections */
-    section, main, footer {
-      margin-bottom: 0px;
-    }
-    section {
-      box-sizing: border-box;
-      max-width: 700px;
-      margin: 36px auto 0 auto;
-      background: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 2px 18px #1e90ff10;
-      padding: 28px 18px 21px 18px;
-      font-size: 1.14em;
-      text-align: center;
-    }
-    section h2 {
-      color: var(--primary-dark);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.25em;
-      letter-spacing: 0.7px;
-      font-weight: 700;
-    }
-    .unique-list, .security-block ul, .roadmap-block ul {
-      text-align: left;
-      margin: 0 auto 0 auto;
-      max-width: 470px;
-      padding-left: 20px;
-    }
-    .unique-list li, .security-block li, .roadmap-block li {
-      margin: 10px 0;
-      font-weight: 500;
-      font-size: 1.08em;
-      list-style: disc;
-    }
-    /* Testimonials / Logos */
-    .testimonials-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-    .testimonial {
-      background: #fafdff;
-      border-radius: 12px;
-      padding: 14px 15px;
-      font-size: 1.07em;
-      box-shadow: 0 1px 7px #1e90ff13;
-      max-width: 270px;
-      min-width: 190px;
-      flex: 1 1 200px;
-      text-align: left;
-      border-left: 4px solid var(--accent);
-    }
-    .testimonial .author {
-      font-size: 0.97em;
-      color: #888;
-      margin-top: 6px;
-    }
-    .logos-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-    .logos-list img {
-      height: 32px;
-      opacity: 0.82;
-      filter: grayscale(0.6);
-      transition: opacity 0.2s;
-    }
-    .logos-list img:hover {
-      opacity: 1;
-      filter: none;
-    }
-    /* Key stats */
-    .stats-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 28px;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-    .stat-block {
-      background: #f3f8ff;
-      border-radius: 12px;
-      padding: 18px 24px;
-      box-shadow: 0 1px 8px #1e90ff14;
-      font-size: 1.25em;
-      color: #1e90ff;
-      font-weight: 700;
-      min-width: 140px;
-      max-width: 190px;
-      margin-bottom: 6px;
-    }
-    .stat-label {
-      display: block;
-      font-size: 0.85em;
-      color: #2b3a4a;
-      font-weight: 500;
-      margin-top: 7px;
-      letter-spacing: 0.2px;
-    }
-    .investor-call {
-      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.18em;
-      margin-bottom: 12px;
-      margin-top: 35px;
-    }
-    .investor-call a {
-      background: #fff;
-      color: var(--primary-dark);
-      font-weight: 600;
-      border-radius: 7px;
-      padding: 9px 20px;
-      text-decoration: none;
-      margin-top: 11px;
-      display: inline-block;
-      transition: background 0.17s;
-    }
-    .investor-call a:hover {
-      background: #1e90ff;
-      color: #fff;
-    }
-    .international-block .world-map {
-      width: 98%;
-      max-width: 400px;
-      margin: 12px auto 0 auto;
-      display: block;
-      opacity: 0.96;
-      border-radius: 10px;
-      box-shadow: 0 2px 18px #1e90ff14;
-    }
-    .international-block .flags {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    .international-block .flag {
-      font-size: 1.45em;
-      margin: 0 2px;
-    }
-    .media-kit-block a {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 600;
-      border-radius: 7px;
-      padding: 10px 28px;
-      text-decoration: none;
-      margin-top: 20px;
-      display: inline-block;
-      font-size: 1.09em;
-      box-shadow: 0 2px 8px #1e90ff22;
-    }
-    .media-kit-block a:hover {
-      background: var(--accent);
-      color: #1a1a1a;
-    }
-    .chatbot-widget {
-      background: #fafdff;
-      border-left: 5px solid var(--primary);
-      color: #1e90ff;
-      margin-top: 24px;
-      font-size: 1.14em;
-      text-align: left;
-      padding: 20px 18px;
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .chatbot-widget .bot-icon {
-      font-size: 2.1em;
-    }
-    .chatbot-widget a {
-      color: #fff;
-      background: var(--primary);
-      border-radius: 7px;
-      padding: 8px 15px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 10px;
-      transition: background 0.17s;
-    }
-    .chatbot-widget a:hover {
-      background: var(--accent);
-      color: #1a1a1a;
-    }
-    .social-proof, .coming-soon {
-      max-width: 700px;
-      margin: 24px auto 0 auto;
-      background: var(--white);
-      border-radius: 14px;
-      box-shadow: 0 2px 18px #1e90ff10;
-      padding: 18px 18px 15px 18px;
-      font-size: 1.13em;
-      text-align: center;
-    }
-    .social-proof {
-      margin-top: 0;
-      font-weight: 600;
-      color: var(--primary-dark);
-      border-left: 5px solid var(--accent);
-    }
-    .coming-soon {
-      margin-top: 14px;
-      color: #fff;
-      background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
-      font-weight: 600;
-      font-size: 1.14em;
-      letter-spacing: 0.4px;
-      box-shadow: 0 4px 22px #00c9a733;
-      border-left: none;
-      border-radius: 14px 14px 14px 14px;
-      padding: 18px 18px 18px 18px;
-    }
-    .countdown {
-      display: inline-block;
-      font-size: 1.28em;
-      color: #fff;
-      font-weight: bold;
-      padding: 0 8px;
-      letter-spacing: 1px;
-      background: #0065b3cc;
-      border-radius: 7px;
-      margin: 0 8px;
-    }
-    main {
-      max-width: 700px;
-      margin: 36px auto 0 auto;
-      background: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 8px 36px #1e90ff12, 0 1.5px 0 var(--border);
-      padding: 32px 18px 24px 18px;
-      position: relative;
-      z-index: 2;
-    }
-    form {
-      margin-top: 5px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    form label {
-      font-weight: 500;
-      margin-bottom: 6px;
-      display: block;
-      color: var(--primary-dark);
-      font-size: 1em;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 2px;
-      border-radius: 7px;
-      border: 1px solid var(--border);
-      font-size: 1em;
-      background: #fafdff;
-      transition: border 0.2s;
-      font-family: inherit;
-    }
-    input:focus, select:focus, textarea:focus {
-      border: 1.5px solid var(--primary);
-      outline: none;
-      background: #f7fbff;
-    }
-    button[type="submit"] {
-      background: var(--primary);
-      color: var(--white);
-      padding: 14px 0;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      font-weight: 700;
-      margin-top: 2px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #1e90ff30;
-      transition: background 0.23s, transform 0.18s;
-      letter-spacing: 0.5px;
-    }
-    button[type="submit"]:hover {
-      background: var(--accent);
-      color: #1a1a1a;
-      transform: scale(1.03);
-    }
-    .consent {
-      font-size: 0.98em;
-      color: #444;
-      margin-top: -7px;
-      margin-bottom: 1px;
-    }
-    .benefits {
-      margin: 36px 0 24px 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .benefit {
-      flex: 1 1 190px;
-      background: #f3f8ff;
-      border-radius: 12px;
-      padding: 18px 12px;
-      box-shadow: 0 1px 8px #1e90ff14;
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      font-size: 1.08em;
-      font-weight: 500;
-      min-width: 165px;
-      max-width: 260px;
-    }
-    .benefit .icon {
-      font-size: 1.45em;
-      background: #e3f5ff;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .about, .faq-section {
-      background: #fafdff;
-      margin-top: 26px;
-      border-radius: 14px;
-      box-shadow: 0 2px 18px #1e90ff10;
-      padding: 22px 18px 18px 18px;
-      color: #26384d;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-    .about h2, .faq-section h2 {
-      color: var(--primary-dark);
-      margin-top: 0;
-      margin-bottom: 9px;
-      letter-spacing: 1px;
-      font-size: 1.18em;
-    }
-    .faq-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .faq-list li {
-      margin-bottom: 13px;
-      padding-left: 0;
-    }
-    .faq-q {
-      color: var(--primary);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .faq-a {
-      color: #26384d;
-      font-size: 0.99em;
-      margin-left: 8px;
-    }
-    /* Footer */
-    footer {
-      margin-top: 44px;
-      padding: 28px 4vw 20px 4vw;
-      background: var(--footer-bg);
-      color: var(--footer-text);
-      text-align: center;
-      font-size: 1em;
-      border-radius: 16px 16px 0 0;
-      letter-spacing: 0.1px;
-    }
-    .footer-links {
-      margin: 10px 0 0 0;
-      font-size: 0.99em;
-    }
-    .footer-links a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 10px;
-      transition: color 0.16s;
-    }
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-    @media (max-width: 900px) {
-      main, section, .about, .faq-section, .social-proof, .coming-soon { max-width: 97vw; }
-    }
-    @media (max-width: 600px) {
-      header { padding: 36px 5px 10px 5px; }
-      h1 { font-size: 1.18em; }
-      .subtitle { font-size: 1em; }
-      .visual img, .visual svg { height: 32px; }
-      main, section, .about, .faq-section { padding: 14px 3vw 10px 3vw; }
-      .benefit { min-width: 120px; }
-      .lang-select-bar { top: 5px; left: 2px; font-size: 0.99em;}
-    }
-    @media (max-width: 420px) {
-      h1 { font-size: 1em;}
-      main, section, .about, .faq-section { padding: 10px 2vw; }
-    }
-    ::-webkit-scrollbar { width: 8px; background: #e6f3fd; }
-    ::-webkit-scrollbar-thumb { background: #bee6ff; border-radius: 8px;}
+  --primary: #2b32b2;
+  --gradient: linear-gradient(120deg,#2b32b2 0%,#1488cc 100%);
+  --neon: #00ffe7;
+  --neon2: #ff00cc;
+  --bg: #0e1320;
+  --bg-glow: #202b44;
+  --card: #151d2c;
+  --text: #eaf1fb;
+  --accent: #ff00cc;
+  --shadow: 0 0 40px #2b32b255;
+  --border: #233055;
+  --white: #fff;
+  --glass: rgba(26,36,56,0.70);
+  --glass2: rgba(43,50,178,0.08);
+  --glass3: rgba(255,0,204,0.16);
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Montserrat', 'JetBrains Mono', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  letter-spacing: 0.15px;
+  background-image: radial-gradient(circle at 80% 10%, #1488cc33 0%, transparent 70%), radial-gradient(circle at 10% 80%, #ff00cc16 0%, transparent 80%);
+}
+.neon-glow {
+  color: var(--neon2);
+  text-shadow: 0 0 10px var(--neon2), 0 0 20px var(--neon2), 0 0 40px #fff1;
+  letter-spacing: 1.5px;
+}
+.lang-select-bar {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 100;
+  background: #202747e0;
+  border-radius: 13px;
+  box-shadow: 0 2px 16px #1488cc33;
+  font-size: 1.09em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px 8px 14px;
+  border: 1.5px solid var(--border);
+  backdrop-filter: blur(7px);
+}
+.lang-select-bar label {
+  font-size: 1.22em;
+  font-weight: 700;
+  color: var(--neon2);
+}
+.lang-select-bar select {
+  font-size: 1.06em;
+  border-radius: 7px;
+  padding: 7px 18px 7px 13px;
+  border: 1px solid var(--border);
+  background: #151d2c;
+  color: var(--text);
+  font-family: inherit;
+  margin-left: 2px;
+}
+.lang-select-bar .flag {
+  font-size: 1.25em;
+  margin-right: 4px;
+  margin-left: 2px;
+}
+header {
+  text-align: center;
+  padding: 80px 10px 36px 10px;
+  background: var(--gradient);
+  color: var(--white);
+  position: relative;
+  border-radius: 0 0 38px 38px;
+  box-shadow: 0 6px 60px #00ffe720;
+  overflow: hidden;
+  min-height: 300px;
+}
+.hero-glow {
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 650px; height: 340px;
+  background: radial-gradient(ellipse at center, #00ffe733 0%, transparent 80%);
+  filter: blur(35px);
+  z-index: 0;
+  pointer-events: none;
+}
+.badge-waitlist {
+  display: inline-block;
+  padding: 7px 22px;
+  background: linear-gradient(90deg, #ff00cc 40%, #00ffe7 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.25em;
+  border-radius: 18px;
+  margin-bottom: 22px;
+  margin-top: 0;
+  box-shadow: 0 0 18px #00ffe766;
+  letter-spacing: 1.1px;
+  border: 2px solid #fff4;
+  animation: badgePop 1.6s ease;
+  position: relative;
+  z-index: 2;
+}
+@keyframes badgePop {
+  0% {transform: scale(0.92);}
+  55% {transform: scale(1.13);}
+  100% {transform: scale(1);}
+}
+.logo-link img {
+  width: 120px;
+  margin-bottom: 22px;
+  border-radius: 20px;
+  border: 2px solid var(--neon2);
+  box-shadow: 0 0 30px #ff00cc33, 0 2px 16px #fff6;
+  background: #fff;
+  transition: transform 0.18s;
+  z-index: 2;
+  position: relative;
+}
+.logo-link:hover img {
+  transform: scale(1.09) rotate(-4deg);
+  box-shadow: 0 0 60px #ff00cc66, 0 2px 12px #fff8;
+}
+h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+  margin: 0 0 14px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 24px var(--neon2), 0 2px 12px #1118;
+  position: relative;
+  z-index: 2;
+}
+.subtitle {
+  font-size: 1.22em;
+  margin-bottom: 23px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 2px 10px #00ffe722;
+  z-index: 2;
+  position: relative;
+}
+.cta-main {
+  font-size: 1.19em;
+  font-weight: 800;
+  color: var(--bg);
+  background: var(--neon2);
+  border-radius: 13px;
+  padding: 17px 48px;
+  margin-top: 22px;
+  margin-bottom: 17px;
+  display: inline-block;
+  box-shadow: 0 0 32px #ff00cc44;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+.cta-main:hover {
+  background: var(--neon);
+  color: var(--primary);
+  transform: scale(1.045);
+  box-shadow: 0 0 58px #00ffe799;
+}
+.visual {
+  display: flex;
+  justify-content: center;
+  gap: 38px;
+  margin: 40px 0 18px 0;
+  z-index: 2;
+  position: relative;
+}
+.visual img, .visual svg {
+  height: 64px;
+  width: auto;
+  opacity: 0.99;
+  filter: drop-shadow(0 4px 22px #00ffe799) contrast(1.12);
+  background: #fff2;
+  border-radius: 18px;
+  padding: 2px;
+}
+.waitlist-stats {
+  margin: 18px auto 0 auto;
+  padding: 14px 22px;
+  font-size: 1.21em;
+  background: var(--glass);
+  border-radius: 16px;
+  box-shadow: 0 0 18px #21c87a33;
+  max-width: 480px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  border: 1.5px solid #00ffe744;
+  position: relative;
+  z-index: 2;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.waitlist-stats strong {
+  color: var(--neon);
+  font-size: 1.18em;
+}
+.waitlist-bar {
+  background: linear-gradient(90deg, #ff00cc 10%, #00ffe7 100%);
+  border-radius: 8px;
+  height: 11px;
+  margin-top: 6px;
+  margin-bottom: 0;
+  width: 100%; max-width: 360px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px #00ffe766;
+  border: 1.4px solid #fff8;
+}
+.waitlist-bar-inner {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ffe7 30%, #ff00cc 80%);
+  animation: waitPop 2.3s cubic-bezier(.6,.3,.3,1.2);
+}
+@keyframes waitPop {0%{width:0;}100%{width:90%;}}
+section, main, footer {
+  margin-bottom: 0;
+}
+section {
+  max-width: 880px;
+  margin: 46px auto 0 auto;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: 0 4px 38px #00ffe733;
+  padding: 38px 28px 26px 28px;
+  font-size: 1.19em;
+  text-align: center;
+  border: 1.5px solid var(--border);
+}
+section h2 {
+  color: var(--neon);
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.38em;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-shadow: 0 2px 18px #00ffe744;
+}
+.unique-list, .security-block ul, .roadmap-block ul {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 540px;
+  padding-left: 8px;
+}
+.unique-list li, .security-block li, .roadmap-block li {
+  margin: 14px 0;
+  font-weight: 500;
+  font-size: 1.07em;
+  list-style: disc;
+  color: #96eaff;
+}
+.schema-section {
+  margin: 40px auto 0 auto;
+  padding: 36px 26px 26px 26px;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: 0 4px 38px #00ffe733;
+  max-width: 880px;
+  border: 1.5px solid var(--border);
+  text-align: center;
+}
+.schema-title {
+  color: var(--neon2);
+  font-size: 1.28em;
+  font-weight: 800;
+  margin-bottom: 18px;
+  margin-top: 0;
+  text-shadow: 0 2px 18px #ff00cc55;
+}
+.schema-svg {
+  display: block;
+  margin: 0 auto 18px auto;
+  max-width: 96vw;
+  width: 100%;
+  height: auto;
+  background: none;
+}
+.schema-legend {
+  color: #a6e8ff;
+  font-size: 1.01em;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.usecases-section {
+  margin: 40px auto 0 auto;
+  padding: 36px 26px 26px 26px;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: 0 4px 38px #00ffe733;
+  max-width: 880px;
+  border: 1.5px solid var(--border);
+  text-align: center;
+}
+.usecases-title {
+  color: var(--neon);
+  font-size: 1.25em;
+  font-weight: 800;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-shadow: 0 2px 18px #00ffe744;
+}
+.usecases-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.usecase-item {
+  background: #232e4d;
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 1px 10px #00ffe733;
+  font-size: 1.07em;
+  font-weight: 600;
+  min-width: 210px;
+  max-width: 340px;
+  flex: 1 1 250px;
+  padding: 24px 14px 18px 14px;
+  margin-bottom: 0;
+  text-align: left;
+  border-left: 5px solid var(--neon);
+}
+@media (max-width: 900px) {
+  main, section, .about, .faq-section, .social-proof, .coming-soon, .schema-section, .usecases-section { max-width: 99vw; }
+  .hero-glow { width: 100vw; }
+  .waitlist-stats {max-width:95vw;}
+  .mail-popup-content {max-width: 95vw;}
+  .schema-svg {max-width: 98vw;}
+}
+@media (max-width: 600px) {
+  header { padding: 40px 3vw 14px 3vw; }
+  h1 { font-size: 1.3em; }
+  .subtitle { font-size: 1.03em; }
+  .visual img, .visual svg { height: 38px; }
+  main, section, .about, .faq-section, .schema-section, .usecases-section { padding: 10px 2vw 9px 2vw; }
+  .benefit { min-width: 110px; font-size: 0.97em;}
+  .lang-select-bar { top: 7px; left: 2px; font-size: 1em;}
+  .stats-grid { gap: 12px; }
+  .badge-waitlist {font-size:1em;}
+  .waitlist-bar {height:8px;}
+  .mail-popup-content {min-width: unset; max-width: 99vw; padding: 1.1em 0.5em;}
+  .usecases-list { gap: 12px;}
+  .usecase-item {min-width: 130px; font-size: 0.97em;}
+  .schema-svg {max-width: 99vw;}
+}
+@media (max-width: 420px) {
+  h1 { font-size: 1.04em;}
+  main, section, .about, .faq-section, .schema-section, .usecases-section { padding: 7px 1vw; }
+  .stat-block { padding: 10px 2px; font-size: 1em; }
+  .mail-popup-content {padding: 0.9em 0.2em;}
+  .schema-svg {max-width: 100vw;}
+}
+@keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+}
+::-webkit-scrollbar { width: 8px; background: #181f2f; }
+::-webkit-scrollbar-thumb { background: #00ffe733; border-radius: 9px;}
   </style>
 </head>
 <body>
-  <!-- Language selector bar with flags -->
   <div class="lang-select-bar">
     <label for="lang-top">🌐</label>
     <span class="flag">🇬🇧</span>
     <select id="lang-top" onchange="openLangPage(this)">
       <option value="">Language</option>
       <option value="fr">🇫🇷 Français</option>
-      <option value="en">🇬🇧 English</option>
+      <option value="en" selected>🇬🇧 English</option>
       <option value="es">🇪🇸 Español</option>
       <option value="de">🇩🇪 Deutsch</option>
       <option value="it">🇮🇹 Italiano</option>
@@ -552,244 +414,1742 @@
       <option value="th">🇹🇭 ไทย</option>
     </select>
   </div>
+
   <header>
+    <div class="hero-glow"></div>
+    <div class="badge-waitlist" id="badge-waitlist">🚀 +<span id="waitlist-count">127,601</span> pioneers await the revolution</div>
     <a href="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" class="logo-link" target="_blank" rel="noopener">
       <img src="https://i.postimg.cc/FRjs6pNz/logo-ernestmind-png.png" alt="ErnestMind Logo" />
     </a>
-    <h1>The 100% Local & Multilingual Artificial Intelligence Revolution</h1>
+    <h1><span class="neon-glow">ERNESTMIND</span><br>The Global AI Revolution</h1>
     <div class="subtitle">
-      200+ AI models, total confidentiality, 25 industries, 20 languages. Try it for free!
+      <span style="color:#fff;">The most powerful, local, multilingual, and confidential Artificial Intelligence ever created.<br>
+      <span style="color:#00ffe7;">200+ models, 25 sectors, 20 languages. Free. Sovereign. Unlimited.</span></span>
     </div>
+    <a class="cta-main" href="#form">Join the Revolution</a>
     <div class="visual">
       <img src="https://cdn-icons-png.flaticon.com/512/5948/5948658.png" alt="AI" title="Artificial Intelligence" />
-      <img src="https://cdn-icons-png.flaticon.com/512/1484/1484834.png" alt="Confidentiality" title="Confidentiality" />
-      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="Globe" title="World and Languages" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1484/1484834.png" alt="Privacy" title="Privacy" />
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="Globe" title="World & Languages" />
+    </div>
+    <div class="waitlist-stats">
+      <span><strong id="waitlist-count2">127,601</strong> registered • Goal: 1,000,000</span>
+      <div class="waitlist-bar"><div class="waitlist-bar-inner" style="width: 12.7%;"></div></div>
+      <span style="font-size:0.96em;opacity:0.82;">Your friends are already on the list. Join them and share!</span>
     </div>
   </header>
 
-  <!-- Why ErnestMind is Unique -->
-  <section class="unique-section">
-    <h2>Why ErnestMind is Unique</h2>
-    <ul class="unique-list">
-      <li>The only 100% sovereign, multilingual, local and confidential AI platform: no data ever leaves your organization.</li>
-      <li>200+ business models tailored for 25 professional sectors, from healthcare to industry, finance to education.</li>
-      <li>Patented technology: our free models outperform the paid offers of industry giants.</li>
-      <li>Ultra-fast, customizable, scalable, and designed for global adoption—even in less covered languages.</li>
-    </ul>
-  </section>
+  <main id="form">
+    <section class="unique-section">
+      <h2>Why is ErnestMind a revolution?</h2>
+      <ul class="unique-list">
+        <li><b>The only 100% sovereign and local AI:</b> your data never leaves your organization.</li>
+        <li><b>200+ ultra-powerful models</b> covering 25 sectors: health, industry, finance, education, and more.</li>
+        <li><b>Patented and multilingual technologies:</b> each model speaks 20 languages, even the rarest ones.</li>
+        <li><b>Unmatched privacy, speed, and customization.</b></li>
+      </ul>
+    </section>
 
-  <!-- Testimonials / Logos -->
-  <section class="testimonials-logos">
-    <h2>They've experienced the ErnestMind revolution</h2>
-    <div class="testimonials-list">
-      <div class="testimonial">
-        "The only AI tool that truly respects our confidentiality requirements and understands our businesses."
-        <div class="author">— CTO, France Health Group</div>
-      </div>
-      <div class="testimonial">
-        "ErnestMind's multilingual power is amazing. A new global standard."
-        <div class="author">— CEO, Tech Africa</div>
-      </div>
-      <div class="testimonial">
-        "A level of customization never seen before, and a true sovereign alternative to Big Tech."
-        <div class="author">— Data Scientist, European Industry</div>
+<section class="how-it-works-section">
+  <style>
+    .how-it-works-section {
+      text-align: center;
+      margin: 38px auto 0 auto;
+      max-width: 700px;
+      background: var(--card, #151d2c);
+      border-radius: 18px;
+      box-shadow: 0 4px 22px #00ffe733;
+      padding: 32px 18px 28px 18px;
+      border: 1.5px solid var(--border, #233055);
+    }
+    .how-it-works-section h2 {
+      color: var(--neon2, #ff00cc);
+      font-weight: 800;
+      font-size: 1.38em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .how-it-works-teaser {
+      font-size: 1.12em;
+      color: #eaf1fb;
+      margin-bottom: 18px;
+    }
+    .how-it-works-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #ff00cc 40%, #00ffe7 100%);
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.18em;
+      padding: 15px 38px;
+      border-radius: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 22px #00ffe766;
+      margin-top: 8px;
+      transition: background 0.16s, transform 0.13s;
+      gap: 0.6em;
+      letter-spacing: 1.1px;
+      outline: none;
+    }
+    .how-it-works-btn:hover {
+      background: linear-gradient(90deg, #00ffe7 30%, #ff00cc 80%);
+      color: var(--primary, #2b32b2);
+      transform: scale(1.045);
+    }
+
+    /* MODAL */
+    .howitworks-modal-overlay {
+      display: none;
+      position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(18,28,48,0.72);
+      z-index: 99999;
+      align-items: center; justify-content: center;
+      animation: fadeIn .22s;
+    }
+    .howitworks-modal-content {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px #ff00cc33;
+      width: 100%;
+      max-width: 700px;
+      min-width: 0;
+      padding: 2.2em 2.2em 1.5em 2.2em;
+      color: #191d2a;
+      position: relative;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+      animation: fadeIn .22s;
+    }
+    .howitworks-modal-content h3 {
+      color: #ff00cc;
+      font-size: 1.23em;
+      margin-top: 0;
+      margin-bottom: 1.3em;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+    }
+    .howitworks-step-list {
+      padding: 0;
+      margin: 0 0 19px 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 22px;
+    }
+    .howitworks-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1em;
+      background: #fafdff;
+      border-radius: 11px;
+      padding: 15px 14px 13px 13px;
+      box-shadow: 0 2px 10px #00ffe714;
+      border-left: 5px solid #ff00cc;
+      min-width: 0;
+    }
+    .howitworks-step .step-icon {
+      font-size: 2em;
+      width: 38px;
+      min-width: 38px;
+      text-align: center;
+    }
+    .howitworks-step .step-title {
+      font-weight: 700;
+      font-size: 1.09em;
+      color: #1976d2;
+      margin-bottom: 2px;
+    }
+    .howitworks-step .step-desc {
+      font-size: 0.98em;
+      color: #333;
+      margin-bottom: 0;
+    }
+    .howitworks-close-btn {
+      position: absolute; top: 12px; right: 18px;
+      background: none; border: none; font-size: 1.7em; color: #bbb;
+      cursor: pointer; font-weight: 800; opacity: 0.9;
+      z-index: 2;
+    }
+    .howitworks-close-btn:hover {color: #ff00cc;}
+    .howitworks-modal-content .howitworks-cta {
+      background: linear-gradient(90deg,#ff00cc 60%,#21c87a 100%);
+      color: #fff;
+      font-weight: 800;
+      border: none;
+      border-radius: 9px;
+      padding: 1.1em 1.5em;
+      font-size: 1.17em;
+      cursor: pointer;
+      margin-top: 17px;
+      width: 100%;
+      box-shadow: 0 2px 12px #ff00cc11;
+      transition: background .18s, transform .11s;
+      text-align: center;
+    }
+    .howitworks-modal-content .howitworks-cta:hover {
+      background: linear-gradient(90deg,#21c87a 70%,#ff00cc 100%);
+      transform: scale(1.04);
+      color: #191d2a;
+    }
+    .howitworks-modal-content .howitworks-small {
+      font-size: 0.97em;
+      color: #1976d2;
+      text-align: center;
+      margin-top: 12px;
+      opacity: 0.84;
+    }
+    @media (max-width: 900px) {
+      .howitworks-modal-content {
+        max-width: 99vw;
+        padding: 1.2em 0.5em;
+      }
+      .howitworks-step-list {
+        gap: 12px 8px;
+      }
+    }
+    @media (max-width: 600px) {
+      .howitworks-modal-content {
+        max-width: 99vw;
+        padding: 0.7em 0.2em;
+      }
+      .howitworks-step-list {
+        grid-template-columns: 1fr;
+        gap: 12px 0;
+      }
+      .howitworks-step {
+        gap: 0.7em;
+        padding: 11px 7px 10px 7px;
+      }
+      .howitworks-step .step-icon {
+        font-size: 1.35em;
+        min-width: 27px; width: 27px;
+      }
+    }
+    @media (max-width: 420px) {
+      .howitworks-modal-content {
+        padding: 0.5em 0.1em;
+      }
+    }
+    @keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+    }
+  </style>
+  <h2>How it works?</h2>
+  <div class="how-it-works-teaser">
+    Want to try ErnestMind?<br>
+    <b>Discover in 4 steps how to enjoy the world's most sovereign AI for free!</b>
+  </div>
+  <button class="how-it-works-btn" onclick="openHowItWorksModal()">
+    See the steps&nbsp;<span aria-hidden="true">➡️</span>
+  </button>
+
+  <div class="howitworks-modal-overlay" id="howitworks-modal-overlay">
+    <div class="howitworks-modal-content" role="dialog" aria-modal="true" aria-labelledby="howitworks-title">
+      <button class="howitworks-close-btn" onclick="closeHowItWorksModal()" aria-label="Close">&times;</button>
+      <h3 id="howitworks-title">How it works?</h3>
+      <ul class="howitworks-step-list">
+        <li class="howitworks-step">
+          <span class="step-icon">📝</span>
+          <div>
+            <div class="step-title">Sign up for free</div>
+            <div class="step-desc">Fill out the form in less than a minute and join the AI revolution.</div>
+          </div>
+        </li>
+        <li class="howitworks-step">
+          <span class="step-icon">💌</span>
+          <div>
+            <div class="step-title">Activate your early access</div>
+            <div class="step-desc">Receive an exclusive email to discover the platform before anyone else.</div>
+          </div>
+        </li>
+        <li class="howitworks-step">
+          <span class="step-icon">🤖</span>
+          <div>
+            <div class="step-title">Test our free AIs</div>
+            <div class="step-desc">Enjoy 3 free AIs and explore over 200 multilingual, 100% local models.</div>
+          </div>
+        </li>
+        <li class="howitworks-step">
+          <span class="step-icon">🚀</span>
+          <div>
+            <div class="step-title">Take it to the next level</div>
+            <div class="step-desc">Unlock all features, customize your experience, become an ambassador or partner.</div>
+          </div>
+        </li>
+      </ul>
+      <button class="howitworks-cta" onclick="window.location.href='#form'">I want to try it now!</button>
+      <div class="howitworks-small">
+        Zero spam. Zero commitment. 100% sovereign.<br>
+        Any advice? <a href="mailto:parisien.data@gmail.com" style="color:#ff00cc;text-decoration:underline;">parisien.data@gmail.com</a>
       </div>
     </div>
-    <div class="logos-list">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_France.svg" alt="France" title="France" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Brazil" title="Brazil" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_South_Africa.svg" alt="South Africa" title="South Africa" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_China.svg" alt="China" title="China" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="US" title="USA" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_Nigeria.svg" alt="Nigeria" title="Nigeria" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Spain" title="Spain" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Germany.svg" alt="Germany" title="Germany" />
+  </div>
+  <script>
+    function openHowItWorksModal() {
+      document.getElementById("howitworks-modal-overlay").style.display = "flex";
+      setTimeout(function() {
+        document.querySelector('.howitworks-modal-content').scrollIntoView({behavior: "smooth", block: "center"});
+      }, 150);
+    }
+    function closeHowItWorksModal() {
+      document.getElementById("howitworks-modal-overlay").style.display = "none";
+    }
+    // Accessibility: close with Escape
+    document.addEventListener('keydown', function(e){
+      if(e.key==="Escape" && document.getElementById("howitworks-modal-overlay").style.display === "flex") {
+        closeHowItWorksModal();
+      }
+    });
+  </script>
+</section>
+
+
+  <section class="schema-section">
+            <h2 class="schema-title">Understanding the Difference: Local AI vs Cloud</h2>
+    <svg class="schema-svg" viewBox="0 0 700 270" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Local vs Cloud Infographic">
+      <rect x="35" y="40" width="260" height="160" rx="22" fill="#00ffe711" stroke="#00ffe7" stroke-width="2"/>
+      <text x="165" y="60" text-anchor="middle" font-size="19" fill="#00ffe7" font-weight="bold">Local AI</text>
+      <image x="70" y="80" width="60" height="60" href="https://cdn-icons-png.flaticon.com/512/1484/1484834.png"/>
+      <text x="140" y="110" font-size="15" fill="#eaf1fb">Your servers</text>
+      <text x="140" y="130" font-size="14" fill="#96eaff">Internal processing</text>
+      <text x="140" y="150" font-size="14" fill="#96eaff">No data leakage</text>
+      <text x="165" y="185" text-anchor="middle" font-size="15" fill="#00ffe7" font-weight="bold">100% Private Data</text>
+      <polygon points="305,120 340,135 305,150" fill="#ff00cc"/>
+      <text x="323" y="125" font-size="17" fill="#ff00cc" font-weight="bold" transform="rotate(6 323 125)">Sovereignty</text>
+      <rect x="370" y="40" width="260" height="160" rx="22" fill="#ff00cc11" stroke="#ff00cc" stroke-width="2"/>
+      <text x="500" y="60" text-anchor="middle" font-size="19" fill="#ff00cc" font-weight="bold">Cloud AI</text>
+      <image x="405" y="80" width="60" height="60" href="https://cdn-icons-png.flaticon.com/512/2991/2991108.png"/>
+      <text x="475" y="110" font-size="15" fill="#eaf1fb">Remote servers</text>
+      <text x="475" y="130" font-size="14" fill="#ff94ef">External processing</text>
+      <text x="475" y="150" font-size="14" fill="#ff94ef">Leakage risks</text>
+      <text x="500" y="185" text-anchor="middle" font-size="15" fill="#ff00cc" font-weight="bold">Shared Data</text>
+    </svg>
+    <div class="schema-legend">
+      <b>With ErnestMind, everything stays with you.</b> No data is sent to the cloud: total privacy and control.
     </div>
   </section>
 
-  <!-- Key Stats -->
-  <section class="key-stats">
-    <h2>Key Numbers</h2>
+
+<!-- SECTION TEMOIGNAGES ErnestMind (Nouveau Style Alt, Bleu/Marron/Rose, No Blanc, Responsive) -->
+<section id="temoignages" class="em-temoignages-section">
+  <div class="em-container">
+    <h2 class="em-temo-title">
+      <span class="em-temo-icon">💬</span> They trust us&nbsp;: <span class="em-gradient-text">ErnestMind customer reviews</span>
+    </h2>
+    <!-- CARROUSEL TEMOIGNAGES -->
+    <div class="em-temo-carousel-wrapper">
+      <div id="temoignages-carousel" class="em-temo-carousel"></div>
+      <button class="em-temo-btn prev" onclick="scrollTemoignages(-1)" aria-label="Précédent">&#10094;</button>
+      <button class="em-temo-btn next" onclick="scrollTemoignages(1)" aria-label="Suivant">&#10095;</button>
+    </div>
+    <div class="em-temo-cta">
+      <button class="em-btn-ajout-temoignage" onclick="showFormTemoignage()">➕ Add a testimonial</button>
+    </div>
+  </div>
+
+  <!-- POPUP FORMULAIRE TEMOIGNAGE -->
+  <div id="popup-temoignage-overlay" class="em-popup-overlay" onclick="closeFormTemoignage(event)">
+    <div class="em-popup-temoignage" onclick="event.stopPropagation()">
+      <button class="em-close-popup" onclick="closeFormTemoignage(event)" aria-label="Fermer">&times;</button>
+      <h3>Your Testimonial</h3>
+      <form id="temoignage-form" autocomplete="off" onsubmit="return submitTemoignage(event)">
+        <div class="em-form-group">
+          <label>First Name *</label>
+          <input type="text" name="prenom" required maxlength="20" placeholder="Votre prénom">
+        </div>
+        <div class="em-form-group">
+          <label>Country *</label>
+          <input type="text" name="pays" required maxlength="30" placeholder="France, Belgique...">
+        </div>
+        <div class="em-form-group">
+          <label>Email (never published) *</label>
+          <input type="email" name="email" required maxlength="50" placeholder="email@exemple.com">
+        </div>
+        <div class="em-form-group">
+          <label>Note</label>
+          <select name="note" required>
+            <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+            <option value="4">⭐⭐⭐⭐ (4/5)</option>
+            <option value="3">⭐⭐⭐ (3/5)</option>
+            <option value="2">⭐⭐ (2/5)</option>
+            <option value="1">⭐ (1/5)</option>
+          </select>
+        </div>
+        <div class="em-form-group">
+          <label>Profile Picture (optional)</label>
+          <input type="file" name="photo" accept="image/*">
+        </div>
+        <div class="em-form-group">
+          <label>Your Testimonial (max. 400 characters) *</label>
+          <textarea name="message" maxlength="400" required placeholder="Votre expérience avec ErnestMind..." oninput="updateCharCount(this)"></textarea>
+          <div class="em-char-count" id="char-count">0/400</div>
+        </div>
+        <div style="display:none;">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" placeholder="Laisser vide">
+        </div>
+        <button type="submit" class="em-btn-envoyer">Envoyer</button>
+      </form>
+      <div id="temoignage-feedback" class="em-form-feedback" style="display:none;">
+        <div id="temoignage-feedback-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP SIGNALER UN TEMOIGNAGE -->
+  <div id="popup-signaler-overlay" class="em-popup-overlay" onclick="closeSignalPopup(event)">
+    <div class="em-popup-temoignage" onclick="event.stopPropagation()">
+      <button class="em-close-popup" onclick="closeSignalPopup(event)" aria-label="Fermer">&times;</button>
+      <h3>Report this testimonial</h3>
+      <form id="signalement-form" autocomplete="off" onsubmit="return submitSignalement(event)">
+        <input type="hidden" name="idx" id="signalement-idx" value="">
+        <div class="em-form-group">
+          <label>Why are you reporting this testimonial? *</label>
+          <div>
+            <label><input type="radio" name="reason" value="inappropriate" required> Inappropriate content</label><br>
+            <label><input type="radio" name="reason" value="spam">Spam or advertising</label><br>
+            <label><input type="radio" name="reason" value="fake"> Fake testimonial</label><br>
+            <label><input type="radio" name="reason" value="other"> Other (please specify)</label>
+            <textarea name="other_text" id="other_textarea" style="display:none;width:98%;margin-top:8px;" minlength="4" maxlength="200" placeholder="Expliquez en quelques mots..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="em-btn-envoyer">Envoyer</button>
+      </form>
+      <div id="signalement-feedback" class="em-form-feedback" style="display:none;">
+        <div id="signalement-feedback-content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+:root {
+  --em-marron: #4d3631;
+  --em-bleu: #133a5e;
+  --em-rose: #e95eba;
+  --em-rose-clair: #f5e1f1;
+  --em-bleu-moyen: #3178b8;
+  --em-bg-gradient: linear-gradient(120deg, var(--em-bleu) 0%, var(--em-rose-clair) 100%);
+  --em-card-gradient: linear-gradient(120deg, #2f4255 0%, #724463 100%);
+  --em-card-alt: linear-gradient(135deg, #7c4e5c 0%, #1d3652 100%);
+  --em-accent: #f7b531;
+}
+
+.em-temoignages-section {
+  background: var(--em-bg-gradient);
+  padding: clamp(32px, 7vw, 90px) 0 clamp(20px, 4vw, 55px) 0;
+}
+.em-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 2vw;
+}
+.em-temo-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
+  font-weight: 900;
+  color: var(--em-bleu);
+  margin-bottom: 2.3rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 0 2px 12px #0002;
+}
+.em-temo-title .em-gradient-text {
+  background: linear-gradient(90deg,var(--em-rose) 35%,var(--em-accent) 95%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.em-temo-title .em-temo-icon {
+  font-size: 1.2em;
+  vertical-align: -0.18em;
+  color: var(--em-rose);
+}
+.em-temo-carousel-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.em-temo-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 250px;
+  width: 100%;
+}
+.em-temo-btn {
+  background: linear-gradient(120deg,var(--em-rose-clair) 30%, var(--em-bleu) 100%);
+  border: none;
+  color: var(--em-rose);
+  font-size: 2.3em;
+  border-radius: 50%;
+  width: 51px;
+  height: 51px;
+  margin: 0 12px;
+  box-shadow: 0 4px 15px #133a5e1a;
+  cursor: pointer;
+  transition: background 0.13s, transform 0.13s, color 0.13s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0.88;
+}
+.em-temo-btn.prev { left: -18px;}
+.em-temo-btn.next { right: -18px;}
+.em-temo-btn:hover {
+  background: linear-gradient(90deg,var(--em-rose) 70%,var(--em-bleu) 100%);
+  color: #fff;
+  transform: scale(1.09) translateY(-50%);
+  opacity: 1;
+}
+.em-temo-cta {
+  text-align: center;
+  margin-top: 2.3em;
+}
+.em-btn-ajout-temoignage,
+.em-btn-envoyer {
+  background: linear-gradient(92deg,var(--em-rose) 40%,var(--em-bleu-moyen) 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 1em 2.2em;
+  font-size: 1.12em;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #133a5e22;
+  margin-top: 0.2em; margin-bottom: 0.25em;
+  transition: background .16s, transform .11s;
+  letter-spacing:.06em;
+}
+.em-btn-ajout-temoignage:hover,
+.em-btn-envoyer:hover {
+  background: linear-gradient(90deg,var(--em-bleu-moyen) 50%,var(--em-rose) 100%);
+  transform: scale(1.04);
+}
+.em-char-count {
+  font-size: 0.97em;
+  color: var(--em-rose);
+  margin-top: 0.12em;
+  text-align: right;
+  text-shadow: 0 1px 2px #fff6;
+}
+
+/* TEMOIGNAGE CARD */
+.em-temoignage-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: temoFadeIn .7s cubic-bezier(.6,.3,.3,1.2) forwards;
+  min-width: min(370px, 96vw);
+  max-width: 650px;
+  margin: 0 auto 1.7em auto;
+  background: var(--em-card-gradient);
+  border-radius: 24px;
+  box-shadow: 0 6px 32px #133a5e55, 0 2px 15px #e95eba25;
+  padding: 2.1em clamp(0.4em, 6vw, 3em) 1.7em clamp(0.4em, 6vw, 3em);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  border: 2.2px solid var(--em-rose, #e95eba);
+  overflow: hidden;
+}
+@media (max-width: 900px) {
+  .em-temo-carousel-wrapper {max-width: 99vw;}
+  .em-temoignage-card {
+    min-width: 95vw; max-width:98vw; padding:1.4em 0.4em 1.5em 0.5em;
+  }
+  .em-temo-btn {width:40px;height:40px;font-size:1.25em;}
+}
+@media (max-width: 600px) {
+  .em-temoignage-card {
+    min-width: 99vw; max-width:99vw; padding:1.1em 0.1em 1.2em 0.1em;
+  }
+  .em-temo-btn {left:2px;right:2px;}
+}
+@keyframes temoFadeIn {
+  to {opacity:1; transform:translateY(0);}
+}
+.em-temoignage-card .em-signal-btn {
+  background: none;
+  border: none;
+  color: var(--em-accent);
+  font-size: 1.13em;
+  position: absolute;
+  right: 32px; top: 22px;
+  cursor: pointer;
+  opacity: 0.76;
+  transition: opacity .14s, color .14s;
+  z-index: 2;
+  font-weight:600;
+}
+.em-temoignage-card .em-signal-btn:hover {
+  opacity: 1;
+  color: var(--em-rose);
+  text-decoration: underline;
+}
+.em-temo-header {
+  display: flex; align-items: center; gap: 1.3em; margin-bottom: 0.8em;
+}
+.em-temo-profile {
+  width: 74px; height: 74px; border-radius: 50%; object-fit: cover;
+  margin-bottom: .2em;
+  border: 2.6px solid var(--em-rose);
+  box-shadow: 0 2px 8px #e95eba55;
+  background: #fff3;
+}
+.em-temo-name {
+  font-weight: 900; color: var(--em-accent);
+  font-size: 1.18em; margin-bottom: 2px; text-shadow: 0 1px 8px var(--em-bleu-moyen)66;
+  letter-spacing:.06em;
+}
+.em-temo-country {
+  font-size: 1.03em; color: var(--em-accent); font-weight: 600;
+  margin-bottom: 2px;
+}
+.em-temo-stars {
+  color: #FFD700; font-size: 1.13em; margin:0 0 .12em 0;
+}
+.em-temo-message {
+  font-size: 1.12em; color: #fff; margin-bottom: 0.75em; font-style: italic; line-height:1.7;
+  font-weight: 500;
+  text-shadow: 0 1px 8px #1d3652;
+}
+.em-temo-email {
+  font-size: 1em; color: var(--em-rose-clair); font-weight:600;
+  text-shadow: 0 1px 2px #0008;
+}
+.em-temo-date {
+  font-size: .97em; color: #ffd6fa; margin-top:.4em; font-weight:500;
+  text-shadow: 0 1px 2px #0008;
+}
+
+/* POPUP & FORM */
+.em-popup-overlay {
+  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(29,54,82,0.67);
+  z-index: 9999; display: none;
+  align-items: center; justify-content: center;
+  animation: fadeIn .22s;
+}
+.em-popup-temoignage {
+  background: var(--em-card-alt);
+  border-radius: 18px;
+  padding: 1.9em 1.4em;
+  box-shadow: 0 10px 36px #133a5e44;
+  min-width: 285px; max-width: 98vw;
+  position: relative;
+  margin: 0 auto;
+  color:#fff;
+  border:1.8px solid var(--em-rose);
+}
+@media (min-width: 500px) {.em-popup-temoignage{min-width:320px;max-width:370px;}}
+@media (min-width: 900px) {.em-popup-temoignage{min-width:370px;max-width:420px;}}
+.em-popup-temoignage h3 {margin:0 0 1.1em 0;text-align:center;color:var(--em-accent);}
+.em-close-popup {
+  position: absolute; top: 12px; right: 12px;
+  background: none; border: none; font-size: 2em; color: var(--em-rose);
+  cursor: pointer; font-weight: 800; opacity: 0.92;transition:color.13s;
+}
+.em-close-popup:hover {color: var(--em-accent);}
+.em-form-group {margin-bottom: 1.13em;}
+.em-form-group label {display:block;color:var(--em-accent);font-weight:600;margin-bottom:.23em;}
+.em-form-group input, .em-form-group textarea, .em-form-group select {
+  width: 100%; padding: 0.6em 0.7em;
+  border: 1.5px solid var(--em-rose);
+  border-radius: 7px; font-size: 1em;
+  outline: none; background: var(--em-rose-clair);
+  font-family: inherit;
+  color: var(--em-bleu);
+  margin-bottom:0.15em;
+  font-weight:500;
+  box-shadow:0 1px 6px #e95eba18;
+}
+.em-form-group input:focus,
+.em-form-group textarea:focus,
+.em-form-group select:focus {
+  border-color: var(--em-accent);
+  background: #fff9;
+}
+.em-form-group textarea {min-height: 72px;resize:vertical;}
+.em-form-feedback {
+  text-align: center; margin-top: 1em; font-size:1.07em;
+}
+.em-form-feedback .loading {color:var(--em-accent);font-weight:700;}
+.em-form-feedback .success {color:var(--em-rose);font-weight:700;}
+.em-form-feedback .error {color:#ffd6fa;font-weight:700;}
+@keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+}
+</style>
+<script>
+// Avatar généré si pas de photo
+function avatarFromName(prenom) {
+  const colors = ["#e95eba","#3178b8","#4d3631","#f7b531","#f5e1f1","#724463","#133a5e","#ffd6fa"];
+  const initials = (prenom[0] || "U").toUpperCase();
+  const color = colors[(prenom.charCodeAt(0)) % colors.length];
+  return `data:image/svg+xml;utf8,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="${color}"/><text x="50%" y="54%" font-size="32" font-family="Arial" fill="#fff" font-weight="700" text-anchor="middle" dominant-baseline="middle">${initials}</text></svg>`;
+}
+
+// Témoignages init
+const temoignages = [
+  {
+    prenom: "Alice",
+    pays: "France",
+    email: "alice@exemple.com",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/women/12.jpg",
+    message: "ErnestMind revolutionized our business management. Impeccable human support, astonishing AI.",
+    date: "2025-04-11"
+  },
+  {
+    prenom: "John",
+    pays: "Canada",
+    email: "john.doe@company.com",
+    note: 4,
+    photo: "https://randomuser.me/api/portraits/men/65.jpg",
+    message: "Simple, fast, local. We saved 20h/week just in HR.",
+    date: "2025-04-02"
+  },
+  {
+    prenom: "Fatima",
+    pays: "Morocco",
+    email: "fatima.b@marocdata.ma",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/women/21.jpg",
+    message: "Multi-language and real confidentiality. Perfect for our international team.",
+    date: "2025-02-18"
+  },
+  {
+    prenom: "Luca",
+    pays: "Italy",
+    email: "luca.rossi@italia.com",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/men/14.jpg",
+    message: "The most advanced AI personalization on the market. Well done ErnestMind!",
+    date: "2025-03-09"
+  },
+  {
+    prenom: "Sophie",
+    pays: "Switzerland",
+    email: "sophie@swissbank.ch",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/women/35.jpg",
+    message: "GDPR compliant, ultra-secure, easy to use. I recommend.",
+    date: "2025-05-01"
+  },
+  {
+    prenom: "Jérôme",
+    pays: "Belgium",
+    email: "jeromeb@belgium.ai",
+    note: 4,
+    photo: "https://randomuser.me/api/portraits/men/81.jpg",
+    message: "Amazing PDF/Word export, instant responses even without Internet.",
+    date: "2025-03-19"
+  },
+  {
+    prenom: "Maria",
+    pays: "Spain",
+    email: "maria.c@empresa.es",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/women/41.jpg",
+    message: "Finally a truly effective multilingual AI! 10/10.",
+    date: "2025-01-28"
+  },
+  {
+    prenom: "Alex",
+    pays: "Germany",
+    email: "alex@company.de",
+    note: 5,
+    photo: "https://randomuser.me/api/portraits/men/44.jpg",
+    message: "Local speed changes everything. We'll never go back to the cloud.",
+    date: "2025-02-12"
+  }
+];
+
+// Carousel logic
+let currentTemoignage = 0;
+const temoignagesPerView = 1;
+
+let autoScrollInterval;
+function renderTemoignages() {
+  const container = document.getElementById("temoignages-carousel");
+  container.innerHTML = "";
+  let idx = currentTemoignage % temoignages.length;
+  container.appendChild(temoignageCardHTML(temoignages[idx], idx));
+  setTimeout(()=>{
+    document.querySelectorAll('.em-temo-stars .star-ani.active').forEach(el=>{
+      el.classList.remove('active');
+      void el.offsetWidth;
+      el.classList.add('active');
+    });
+  }, 90);
+}
+function temoignageCardHTML(t, idx) {
+  let displayName = t.prenom;
+  let emailShort = t.email.replace(/(.{2}).+(@.+)/, "$1***$2");
+  let emailLink = `<a href="mailto:${t.email}" style="color:#ffd6fa;text-decoration:underline;" title="Contacter">${emailShort}</a>`;
+  let stars = "";
+  for(let s=1; s<=5; s++) {
+    stars += `<span class="star-ani${s<=t.note?' active':''}">&#9733;</span>`;
+  }
+  let photo = t.photo && t.photo.trim() ? t.photo : avatarFromName(t.prenom);
+  let card = document.createElement("div");
+  card.className = "em-temoignage-card";
+  card.innerHTML = `
+      <button class="em-signal-btn" title="Signaler ce témoignage" onclick="openSignalPopup(${idx},event)">Signaler</button>
+      <div class="em-temo-header">
+        <img src="${photo}" class="em-temo-profile" alt="Photo profil ${displayName}">
+        <div>
+          <div class="em-temo-name">${displayName}</div>
+          <div class="em-temo-country">${t.pays}</div>
+        </div>
+      </div>
+      <div class="em-temo-stars" aria-label="Note">${stars}</div>
+      <div class="em-temo-message">"${t.message.replace(/</g,"&lt;")}"</div>
+      <div class="em-temo-email">${emailLink}</div>
+      <div class="em-temo-date">${t.date}</div>
+    `;
+  return card;
+}
+function scrollTemoignages(dir) {
+  currentTemoignage = (currentTemoignage + dir + temoignages.length) % temoignages.length;
+  renderTemoignages();
+  resetAutoScroll();
+}
+function autoScrollTemoignages() {
+  autoScrollInterval = setInterval(()=>scrollTemoignages(1), 7000);
+}
+function resetAutoScroll() {
+  clearInterval(autoScrollInterval);
+  autoScrollTemoignages();
+}
+window.addEventListener("resize", renderTemoignages);
+window.addEventListener("DOMContentLoaded", ()=>{
+  renderTemoignages();
+  autoScrollTemoignages();
+});
+function updateCharCount(el) {
+  document.getElementById("char-count").textContent = `${el.value.length}/400`;
+}
+function showFormTemoignage() {
+  document.getElementById("popup-temoignage-overlay").style.display = "flex";
+  document.getElementById("temoignage-form").reset();
+  document.getElementById("temoignage-feedback").style.display = "none";
+  updateCharCount(document.querySelector('textarea[name="message"]'));
+}
+function closeFormTemoignage(e) {
+  if(e && e.target && (e.target.id === "popup-temoignage-overlay" || e.target.classList.contains("em-close-popup"))) {
+    document.getElementById("popup-temoignage-overlay").style.display = "none";
+  }
+}
+function submitTemoignage(e) {
+  e.preventDefault();
+  const form = document.getElementById("temoignage-form");
+  const data = new FormData(form);
+  if(data.get("website")) {
+    document.getElementById("temoignage-feedback-content").innerHTML = "<span class='error'>Erreur anti-spam</span>";
+    document.getElementById("temoignage-feedback").style.display = "block";
+    return false;
+  }
+  document.getElementById("temoignage-feedback").style.display = "block";
+  document.getElementById("temoignage-feedback-content").innerHTML = "<span class='loading'>⏳ Sending...</span>";
+  setTimeout(()=>{
+    document.getElementById("temoignage-feedback-content").innerHTML = "<span class='success'>✔️ Thank you! Your testimonial has been sent successfully.</span>";
+    let photoURL = "";
+    if(data.get("photo") && data.get("photo").name) {
+      const reader = new FileReader();
+      reader.onload = e => {
+        addTemoignage({...Object.fromEntries(data.entries()), photo: e.target.result, date: new Date().toISOString().slice(0,10)});
+        setTimeout(()=>closeFormTemoignage({target:{id:"popup-temoignage-overlay"}}), 2300);
+      };
+      reader.readAsDataURL(data.get("photo"));
+      return false;
+    } else {
+      addTemoignage({...Object.fromEntries(data.entries()), photo: "", date: new Date().toISOString().slice(0,10)});
+      setTimeout(()=>closeFormTemoignage({target:{id:"popup-temoignage-overlay"}}), 2300);
+      return false;
+    }
+  }, 1200 + Math.random()*1200);
+  return false;
+}
+function addTemoignage(t) {
+  temoignages.unshift({
+    prenom: t.prenom,
+    pays: t.pays,
+    email: t.email,
+    note: parseInt(t.note),
+    photo: t.photo,
+    message: t.message,
+    date: t.date
+  });
+  renderTemoignages();
+}
+
+// SIGNALER UN TEMOIGNAGE (popup façon Facebook)
+function openSignalPopup(idx, event) {
+  event.stopPropagation();
+  document.getElementById("popup-signaler-overlay").style.display = "flex";
+  document.getElementById("signalement-form").reset();
+  document.getElementById("signalement-feedback").style.display = "none";
+  document.getElementById("signalement-idx").value = idx;
+  document.getElementById("other_textarea").style.display = "none";
+  document.querySelectorAll('#signalement-form input[type="radio"]').forEach(el=>{
+    el.onclick = function() {
+      document.getElementById("other_textarea").style.display = (this.value === "other") ? "block" : "none";
+      if(this.value !== "other") document.getElementById("other_textarea").value="";
+    };
+  });
+}
+function closeSignalPopup(e) {
+  if(e && e.target && (e.target.id === "popup-signaler-overlay" || e.target.classList.contains("em-close-popup"))) {
+    document.getElementById("popup-signaler-overlay").style.display = "none";
+  }
+}
+function submitSignalement(e) {
+  e.preventDefault();
+  const form = document.getElementById("signalement-form");
+  const data = new FormData(form);
+  const reason = data.get("reason");
+  const otherText = data.get("other_text") || "";
+  if(reason === "other" && otherText.trim().length < 4) {
+    document.getElementById("signalement-feedback-content").innerHTML = "<span class='error'>Please specify your reason (at least 4 characters).</span>";
+    document.getElementById("signalement-feedback").style.display = "block";
+    return false;
+  }
+  document.getElementById("signalement-feedback-content").innerHTML = "<span class='loading'>⏳ Reporting...</span>";
+  document.getElementById("signalement-feedback").style.display = "block";
+  setTimeout(()=>{
+    document.getElementById("signalement-feedback-content").innerHTML = "<span class='success'>✔️ Thank you, we have received your report. Our team will review it shortly.</span>";
+    setTimeout(()=>closeSignalPopup({target:{id:"popup-signaler-overlay"}}), 2000);
+  }, 900 + Math.random()*800);
+  return false;
+}
+</script>
+
+
+    <section class="usecases-section">
+      <h2 class="usecases-title">Concrete examples: how ErnestMind changes daily life</h2>
+    <div class="usecases-list">
+      <div class="usecase-item">
+        <b>Industrial SME</b><br>
+        ErnestMind analyzes production data in real time, detects anomalies and proposes optimizations, all while guaranteeing total confidentiality of internal processes.
+      </div>
+      <div class="usecase-item">
+        <b>School / University</b><br>
+        Teachers use ErnestMind to generate personalized materials in 20 languages, track student progress, and automate administrative management, with no data leaks.
+      </div>
+      <div class="usecase-item">
+        <b>Medical office</b><br>
+        ErnestMind assists medical staff with diagnosis, patient record management, and report writing, all locally and GDPR compliant.
+      </div>
+    </div>
+    </section>
+
+    <section class="testimonials-logos">
+  <h2>They have already joined the ErnestMind Revolution</h2>
+  <div class="testimonials-list">
+    <div class="testimonial">
+      "A level of confidentiality and performance never before seen in AI."
+      <div class="author">— CTO, Health Europe</div>
+    </div>
+    <div class="testimonial">
+      "First AI tool capable of working in all our business languages."
+      <div class="author">— CEO, Tech Africa</div>
+    </div>
+    <div class="testimonial">
+      "Personalization and total sovereignty: finally a real alternative."
+      <div class="author">— Data Scientist, Industry France</div>
+    </div>
+    <div class="testimonial">
+      "Already adopted here, ultra fast and easy to deploy!"
+      <div class="author">— IT Manager, SME Morocco</div>
+    </div>
+    <div class="testimonial">
+      "The ErnestMind community is exceptional. Can't wait to see what's next."
+      <div class="author">— AI Ambassador, Canada</div>
+    </div>
+  </div>
+  <div class="logos-list">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_France.svg" alt="France" title="France" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Brazil" title="Brazil" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Flag_of_South_Africa.svg" alt="South Africa" title="South Africa" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_China.svg" alt="China" title="China" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="United States" title="United States" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_Nigeria.svg" alt="Nigeria" title="Nigeria" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Spain" title="Spain" class="flag-logo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Flag_of_Germany.svg" alt="Germany" title="Germany" class="flag-logo" />
+  </div>
+  <style>
+    .testimonials-logos .logos-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .testimonials-logos .flag-logo {
+      width: 38px;
+      height: 28px;
+      max-width: 12vw;
+      max-height: 6vw;
+      min-width: 24px;
+      min-height: 16px;
+      object-fit: contain;
+      opacity: 0.90;
+      border-radius: 6px;
+      filter: grayscale(0.4) drop-shadow(0 1px 6px #00ffe724);
+      transition: opacity 0.2s, filter 0.2s;
+      box-shadow: 0 1px 7px #00ffe715;
+    }
+    .testimonials-logos .flag-logo:hover {
+      opacity: 1;
+      filter: none;
+      box-shadow: 0 1px 15px #00ffe744;
+    }
+    @media (max-width: 600px) {
+      .testimonials-logos .flag-logo {
+        width: 28px;
+        height: 20px;
+        max-width: 18vw;
+        max-height: 10vw;
+      }
+    }
+    @media (max-width: 420px) {
+      .testimonials-logos .flag-logo {
+        width: 18px;
+        height: 13px;
+        max-width: 22vw;
+        max-height: 13vw;
+      }
+      .testimonials-logos .logos-list {
+        gap: 9px;
+      }
+    }
+  </style>
+</section>
+
+    <section class="key-stats">
+      <h2>Revolution Figures</h2>
     <div class="stats-grid">
       <div class="stat-block">200+<span class="stat-label">AI Models</span></div>
-      <div class="stat-block">25<span class="stat-label">Industries</span></div>
-      <div class="stat-block">20<span class="stat-label">Native Languages</span></div>
+      <div class="stat-block">25<span class="stat-label">Sectors</span></div>
+      <div class="stat-block">20<span class="stat-label">Languages</span></div>
       <div class="stat-block">100%<span class="stat-label">Sovereign & Local</span></div>
-      <div class="stat-block">0<span class="stat-label">Data Leaks</span></div>
+      <div class="stat-block">0<span class="stat-label">Data Leak</span></div>
     </div>
-  </section>
+    </section>
 
-  <!-- Social Proof -->
-  <div class="social-proof">
-    Already tested by AI experts, SMEs, and large groups.<br>
-    <span style="color:#1e90ff;">Join the global waiting list!</span>
+    <section class="social-proof">
+      Already tested by AI experts, SMEs, large groups and visionaries worldwide.<br>
+      <span style="color:#ff00cc;">Join the first wave – the revolution begins today!</span>
+    </section>
+
+    <section class="coming-soon">
+      <span>The <b>3 free AI models</b> will be available in <span class="countdown" id="countdown"></span></span>
+    </section>
+
+    <section class="inscription-section">
+  <style>
+    .inscription-section {
+      max-width: 540px;
+      margin: 40px auto 0 auto;
+      background: var(--card, #151d2c);
+      border-radius: 18px;
+      box-shadow: 0 4px 28px #00ffe733;
+      padding: 32px 20px 22px 20px;
+      font-size: 1.1em;
+      text-align: center;
+      border: 1.5px solid var(--border, #233055);
+    }
+    #preinsc-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: stretch;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+    #preinsc-form label {
+      text-align: left;
+      font-weight: 600;
+      color: var(--neon, #00ffe7);
+      margin-bottom: 2px;
+      margin-top: 5px;
+      font-size: 1em;
+    }
+    #preinsc-form input,
+    #preinsc-form select {
+      font-size: 1em;
+      padding: 10px 13px;
+      border-radius: 8px;
+      border: 1.2px solid var(--border, #233055);
+      margin-bottom: 2px;
+      margin-top: 0;
+      background: #1c2437;
+      color: var(--text, #eaf1fb);
+      font-family: inherit;
+      transition: border-color 0.18s;
+    }
+    #preinsc-form input:focus,
+    #preinsc-form textarea:focus,
+    #preinsc-form select:focus {
+      outline: none;
+      border-color: var(--neon2, #ff00cc);
+      background: #222e48;
+    }
+    #preinsc-form .consent {
+      display: flex;
+      align-items: center;
+      font-size: 0.99em;
+      color: #c8eaff;
+      gap: 9px;
+      margin-top: 10px;
+      margin-bottom: 3px;
+    }
+    #preinsc-form button[type=submit] {
+      background: var(--neon2, #ff00cc);
+      color: #fff;
+      font-weight: 800;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 26px;
+      font-size: 1.13em;
+      margin-top: 17px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 22px #ff00cc33;
+      transition: background 0.18s, color 0.18s, transform 0.14s;
+    }
+    #preinsc-form button[type=submit]:hover {
+      background: var(--neon, #00ffe7);
+      color: var(--primary, #2b32b2);
+      transform: scale(1.045);
+      box-shadow: 0 0 38px #00ffe799;
+    }
+    .benefits {
+      margin: 24px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .benefit {
+      flex: 1 1 140px;
+      background: #232e4d;
+      border-radius: 13px;
+      padding: 16px 10px;
+      box-shadow: 0 1px 10px #00ffe733;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 0.98em;
+      font-weight: 600;
+      min-width: 90px;
+      max-width: 160px;
+      color: var(--neon, #00ffe7);
+      border: 1.3px solid #1488cc66;
+      justify-content: center;
+    }
+    .benefit .icon {
+      font-size: 1.5em;
+      background: #ff00cc33;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 8px #00ffe799;
+    }
+    .mail-popup-overlay {
+      display: none;
+      position: fixed;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(18,28,48,0.62);
+      z-index: 9999;
+      align-items: center; justify-content: center;
+      animation: fadeIn .22s;
+    }
+    .mail-popup-content {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 40px #00ffe744;
+      min-width: 250px; max-width: 99vw;
+      width: 100%;
+      max-width: 390px;
+      padding: 1.8em 0.9em;
+      color: #191d2a;
+      position: relative;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+    .mail-popup-content h3 {
+      color: #1976d2;
+      font-size: 1.18em;
+      margin-top: 0;
+      margin-bottom: 1.2em;
+      text-align: center;
+    }
+    .mail-popup-content label {
+      color: #1976d2;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 7px;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    .mail-popup-content input, .mail-popup-content select {
+      width: 100%;
+      padding: 9px;
+      border-radius: 8px;
+      border: 1.2px solid #334466;
+      font-size: 1em;
+      font-family: inherit;
+      margin-bottom: 4px;
+      margin-top: 2px;
+      background: #fafdff;
+    }
+    .mail-popup-content .btn-send-mail {
+      background: linear-gradient(90deg,#1976d2 60%,#21c87a 100%);
+      color: #fff;
+      font-weight: 800;
+      border: none;
+      border-radius: 8px;
+      padding: 1em 2.2em;
+      font-size: 1.05em;
+      cursor: pointer;
+      margin-top: 12px;
+      width: 100%;
+      box-shadow: 0 2px 12px #1976d211;
+      transition: background .18s, transform .11s;
+    }
+    .mail-popup-content .btn-send-mail:hover {
+      background: linear-gradient(90deg,#21c87a 70%,#1976d2 100%);
+      transform: scale(1.04);
+    }
+    .mail-popup-content .close-btn {
+      position: absolute; top: 12px; right: 14px;
+      background: none; border: none; font-size: 1.5em; color: #bbb;
+      cursor: pointer; font-weight: 800; opacity: 0.9;
+    }
+    .mail-popup-content .close-btn:hover {color: #1976d2;}
+    .mail-popup-content .mail-feedback {
+      margin-top: 12px; text-align:center; font-size:1em;
+      color: #1976d2; font-weight:700;
+    }
+    @media (max-width: 600px) {
+      .inscription-section {
+        padding: 10px 2vw 9px 2vw;
+        max-width: 100vw;
+      }
+      #preinsc-form {
+        gap: 10px;
+      }
+      .benefits {
+        gap: 8px;
+      }
+      .benefit {
+        font-size: 0.95em;
+        min-width: 70px;
+        max-width: 99vw;
+        padding: 11px 5px;
+      }
+    }
+    @media (max-width: 420px) {
+      .inscription-section {
+        padding: 7px 1vw;
+      }
+      .mail-popup-content {
+        padding: 0.9em 0.2em;
+        min-width: unset;
+      }
+    }
+    @keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+    }
+  </style>
+  <form id="preinsc-form" onsubmit="openMailPopup(event)">
+    <label for="name">Name</label>
+    <input id="name" name="Name" type="text" placeholder="Your name" autocomplete="given-name" required>
+    <label for="email">Email</label>
+    <input id="email" name="Email" type="email" placeholder="Your email" autocomplete="email" required>
+    <label for="lang">Preferred Language</label>
+    <select id="lang" name="Preferred Language" required>
+      <option value="">Choose language...</option>
+      <option value="fr">🇫🇷 French</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Spanish</option>
+      <option value="de">🇩🇪 German</option>
+      <option value="it">🇮🇹 Italian</option>
+      <option value="pt">🇵🇹 Portuguese</option>
+      <option value="ar">🇸🇦 Arabic</option>
+      <option value="zh">🇨🇳 Chinese</option>
+      <option value="ru">🇷🇺 Russian</option>
+      <option value="ja">🇯🇵 Japanese</option>
+      <option value="ko">🇰🇷 Korean</option>
+      <option value="hi">🇮🇳 Hindi</option>
+      <option value="tr">🇹🇷 Turkish</option>
+      <option value="cr">🇭🇹 Creole</option>
+      <option value="vi">🇻🇳 Vietnamese</option>
+      <option value="pl">🇵🇱 Polish</option>
+      <option value="nl">🇳🇱 Dutch</option>
+      <option value="ro">🇷🇴 Romanian</option>
+      <option value="el">🇬🇷 Greek</option>
+      <option value="th">🇹🇭 Thai</option>
+    </select>
+    <label for="company">Company (optional)</label>
+    <input id="company" name="Company" type="text" placeholder="Your company name">
+    <label for="usage">Intended Use (optional)</label>
+    <select id="usage" name="Intended Use">
+      <option value="">Choose...</option>
+      <option>Free trial</option>
+      <option>Business / Team</option>
+      <option>Partnership</option>
+      <option>Education / Training</option>
+      <option>AI Ambassador</option>
+      <option>Other</option>
+    </select>
+    <label class="consent">
+      <input type="checkbox" name="Consent" required>
+      I want to be among the first to test ErnestMind and receive exclusive updates.
+    </label>
+    <button type="submit">Join the AI Revolution</button>
+  </form>
+  <div class="benefits">
+    <div class="benefit"><span class="icon">🌍</span>20+ native languages</div>
+    <div class="benefit"><span class="icon">🔒</span>100% local & private</div>
+    <div class="benefit"><span class="icon">🏢</span>25 professional sectors</div>
+    <div class="benefit"><span class="icon">🚀</span>Ultra-fast, scalable</div>
+    <div class="benefit"><span class="icon">🤝</span>Ambassadors & community</div>
+  </div>
+  <div style="text-align:center; margin-top:18px; color:#81caff;">
+    Need help? Contact: <a href="mailto:parisien.data@gmail.com" style="color:#ff00cc;text-decoration:underline;">parisien.data@gmail.com</a>
   </div>
 
-  <!-- Coming soon bar + countdown -->
-  <div class="coming-soon">
-    <span>Free models will be available in <span class="countdown" id="countdown"></span></span>
+  <div class="mail-popup-overlay" id="mail-popup-overlay">
+    <div class="mail-popup-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" onclick="closeMailPopup()" aria-label="Close">&times;</button>
+      <h3 id="modal-title">ErnestMind Pre-registration</h3>
+      <label>Your Name</label>
+      <input type="text" id="popup-name" readonly>
+      <label>Your Email</label>
+      <input type="email" id="popup-email" readonly>
+      <label>Preferred Language</label>
+      <input type="text" id="popup-lang" readonly>
+      <label>Company</label>
+      <input type="text" id="popup-company" readonly>
+      <label>Intended Use</label>
+      <input type="text" id="popup-usage" readonly>
+      <button class="btn-send-mail" onclick="sendMail()">Send My Registration</button>
+      <div class="mail-feedback" id="mail-feedback"></div>
+      <div style="margin-top:10px; font-size:0.96em; color:#888;">
+        <b>Confidentiality:</b> Your email will never be shared or sold. GDPR compliant.
+      </div>
+      <div style="margin-top:13px; font-size:1.07em; color:#21c87a;">
+        🎁 6 free AI trainings upon opening!
+      </div>
+    </div>
+<script>
+function openMailPopup(event) {
+  event.preventDefault();
+  // Get values from the main form
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const lang = document.getElementById('lang').selectedOptions[0].text;
+  const company = document.getElementById('company').value;
+  const usage = document.getElementById('usage').value;
+
+  // Populate popup fields
+  document.getElementById('popup-name').value = name;
+  document.getElementById('popup-email').value = email;
+  document.getElementById('popup-lang').value = lang;
+  document.getElementById('popup-company').value = company;
+  document.getElementById('popup-usage').value = usage;
+
+  // Show the popup
+  document.getElementById('mail-popup-overlay').style.display = 'flex';
+  document.getElementById('mail-feedback').textContent = "";
+}
+
+function closeMailPopup() {
+  document.getElementById('mail-popup-overlay').style.display = 'none';
+}
+
+// Optional: simulate email sending
+function sendMail() {
+  document.getElementById('mail-feedback').textContent = "⏳ Sending...";
+  setTimeout(()=>{
+    document.getElementById('mail-feedback').textContent = "✅ Your registration has been sent successfully! Thank you 🙏";
+    setTimeout(closeMailPopup, 1800);
+  }, 1200);
+}
+
+// Close popup with Escape key
+window.addEventListener('keydown', function(e){
+  if (e.key === "Escape") closeMailPopup();
+});
+</script>
+</section>
+
+<button class="confidentialite-btn" onclick="openConfidentialiteModal()">
+  🔒 Confidentiality & Data
+</button>
+
+<div class="confidentialite-modal-overlay" id="confidentialite-modal-overlay">
+  <div class="confidentialite-modal-content" role="dialog" aria-modal="true" aria-labelledby="confidentialite-title">
+    <button class="confidentialite-close-btn" onclick="closeConfidentialiteModal()" aria-label="Close">&times;</button>
+    <h3 id="confidentialite-title">🔒 Privacy & Data Protection</h3>
+    <div class="confidentialite-intro">
+      At ErnestMind, the privacy and sovereignty of your data are at the heart of our mission.<br>
+      Your information remains private, secure, and under your exclusive control.
+    </div>
+    <ul class="confidentialite-liste">
+      <li><span class="conficon">🖥️</span> <b>100% Local Processing:</b> Your data never leaves your organization or device.</li>
+      <li><span class="conficon">☁️🚫</span> <b>No Data in the Cloud:</b> No external transfer, storage, or analysis.</li>
+      <li><span class="conficon">🇪🇺</span> <b>GDPR Compliance:</b> Strict adherence to European data protection regulations.</li>
+      <li><span class="conficon">🚫💰</span> <b>No Resale, No Sharing:</b> Your information will never be sold or exploited for commercial purposes.</li>
+      <li><span class="conficon">🔎</span> <b>Transparent Models and Logs:</b> Verifiable operation, no backdoors.</li>
+      <li><span class="conficon">🗑️</span> <b>Deletion on Demand:</b> You can erase all your data at any time.</li>
+      <li><span class="conficon">👨‍💻</span> <b>Dedicated Support:</b> Direct contact for any GDPR or privacy questions.</li>
+    </ul>
+    <div class="confidentialite-droits">
+      <b>Your Rights & Guarantees:</b><br>
+      You have the right to access, rectify, and delete your personal data at any time.<br>
+      We commit to responding to any request within 72 hours.
+    </div>
+    <div class="confidentialite-ethique">
+      <b>Our Ethical Commitment:</b><br>
+      ErnestMind is committed to sovereign, independent, and privacy-respecting AI.<br>
+      Refusal of surveillance, transparency on algorithms, priority to your freedom and the security of your information.
+    </div>
+    <div class="confidentialite-contact">
+      <b>Dedicated Contact:</b><br>
+      <a href="mailto:parisien.data@gmail.com" style="color:#ff00cc;text-decoration:underline;">parisien.data@gmail.com</a><br>
+      For any questions or requests related to privacy.
+    </div>
+    <details class="confidentialite-faq">
+      <summary>❓ Express FAQ</summary>
+      <ul>
+        <li><b>Is my data analyzed?</b> No, everything remains local and private.</li>
+        <li><b>Can I erase my info?</b> Yes, at any time.</li>
+        <li><b>Who has access to my data?</b> Only you, never ErnestMind or a third party.</li>
+      </ul>
+    </details>
+    <div class="confidentialite-footer">
+      <a href="#" style="color:#1976d2;text-decoration:underline;">Legal Mentions & Full Policy</a>
+    </div>
   </div>
+</div>
 
-  <!-- Form & Benefits -->
-  <main>
-    <form action="https://formspree.io/f/xyyrlzya" method="POST" autocomplete="on">
-      <label for="name">First name</label>
-      <input id="name" name="First name" type="text" placeholder="Your first name" autocomplete="given-name" required>
-      <label for="email">Email</label>
-      <input id="email" name="Email" type="email" placeholder="Your email" autocomplete="email" required>
-      <label for="lang">Preferred language</label>
-      <select id="lang" name="Preferred language" required onchange="openLangPage(this)">
-        <option value="">Select a language...</option>
-        <option value="fr">🇫🇷 French</option>
-        <option value="en">🇬🇧 English</option>
-        <option value="es">🇪🇸 Spanish</option>
-        <option value="de">🇩🇪 German</option>
-        <option value="it">🇮🇹 Italian</option>
-        <option value="pt">🇵🇹 Portuguese</option>
-        <option value="ar">🇸🇦 Arabic</option>
-        <option value="zh">🇨🇳 Chinese</option>
-        <option value="ru">🇷🇺 Russian</option>
-        <option value="ja">🇯🇵 Japanese</option>
-        <option value="ko">🇰🇷 Korean</option>
-        <option value="hi">🇮🇳 Hindi</option>
-        <option value="tr">🇹🇷 Turkish</option>
-        <option value="cr">🇭🇹 Creole</option>
-        <option value="vi">🇻🇳 Vietnamese</option>
-        <option value="pl">🇵🇱 Polish</option>
-        <option value="nl">🇳🇱 Dutch</option>
-        <option value="ro">🇷🇴 Romanian</option>
-        <option value="el">🇬🇷 Greek</option>
-        <option value="th">🇹🇭 Thai</option>
-      </select>
-      <label for="company">Company (optional)</label>
-      <input id="company" name="Company" type="text" placeholder="Your company name">
-      <label for="usage">Intended usage (optional)</label>
-      <select id="usage" name="Intended usage">
-        <option value="">Select...</option>
-        <option>Free trial</option>
-        <option>Business / Team</option>
-        <option>Partnership</option>
-        <option>Education / Training</option>
-        <option>Other</option>
-      </select>
-      <label class="consent">
-        <input type="checkbox" name="Consent" required>
-        I agree to be contacted by ErnestMind to receive my exclusive access (no spam, total confidentiality).
-      </label>
-      <button type="submit">Get exclusive access</button>
-    </form>
-    <div class="benefits">
-      <div class="benefit"><span class="icon">🌍</span>20+ Languages</div>
-      <div class="benefit"><span class="icon">🔒</span>100% Local & Confidential</div>
-      <div class="benefit"><span class="icon">🏢</span>25 Industries</div>
-      <div class="benefit"><span class="icon">🚀</span>Fast & Easy to Use</div>
-      <div class="benefit"><span class="icon">🤝</span>Open to Partners</div>
-    </div>
-    <div style="text-align:center; margin-top:18px; color:#888;">
-      Need help? Contact: <a href="mailto:parisien.data@gmail.com" style="color:#1e90ff;text-decoration:underline;">parisien.data@gmail.com</a>
-    </div>
-  </main>
+<style>
+.confidentialite-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(90deg, #00ffe7 20%, #ff00cc 90%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.09em;
+  padding: 12px 27px;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 19px #00ffe799;
+  margin: 24px auto 18px auto;
+  transition: background .14s, transform .11s;
+}
+.confidentialite-btn:hover {
+  background: linear-gradient(90deg, #ff00cc 20%, #00ffe7 90%);
+  color: var(--primary, #2b32b2);
+  transform: scale(1.04);
+}
+.confidentialite-modal-overlay {
+  display: none;
+  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(12,18,38,0.77);
+  z-index: 999999;
+  align-items: center; justify-content: center;
+  animation: fadeIn .22s;
+}
+.confidentialite-modal-content {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 10px 44px #00ffe745;
+  width: 99vw; max-width: 700px; min-width: 0;
+  padding: 2em 2.1em 1.2em 2.1em;
+  color: #222;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  animation: fadeIn .22s;
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.confidentialite-modal-content h3 {
+  color: #ff00cc;
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+}
+.confidentialite-intro {
+  font-size: 1.11em;
+  color: #1976d2;
+  text-align: center;
+  margin-bottom: 1.1em;
+}
+.confidentialite-liste {
+  margin: 0 0 1.3em 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+.confidentialite-liste li {
+  background: #fafdff;
+  border-radius: 11px;
+  box-shadow: 0 2px 10px #00ffe714;
+  border-left: 5px solid #00ffe7;
+  padding: 13px 17px 13px 15px;
+  font-size: 1.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 320px;
+  min-width: 220px;
+  max-width: 100%;
+}
+.conficon {
+  font-size: 1.3em;
+  margin-right: 7px;
+}
+.confidentialite-droits, .confidentialite-ethique, .confidentialite-contact {
+  margin: 1em 0 0.7em 0;
+  background: #f8fafd;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 1.04em;
+  color: #191d2a;
+  box-shadow: 0 1px 7px #00ffe715;
+}
+.confidentialite-ethique { color: #2b32b2;}
+.confidentialite-contact { color: #ff00cc;}
+.confidentialite-faq {
+  margin: 1.2em 0 0.5em 0;
+  font-size: 1.01em;
+}
+.confidentialite-faq summary {
+  font-weight: 700;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 1.05em;
+}
+.confidentialite-faq ul {
+  margin: 0.7em 0 0 0.4em;
+  padding: 0;
+  list-style: disc inside;
+}
+.confidentialite-faq li {
+  margin-bottom: 0.3em;
+}
+.confidentialite-footer {
+  text-align: center;
+  margin-top: 1.1em;
+  font-size: 0.99em;
+  opacity: 0.85;
+}
+.confidentialite-close-btn {
+  position: absolute; top: 14px; right: 17px;
+  background: none; border: none; font-size: 1.5em; color: #bbb;
+  cursor: pointer; font-weight: 800; opacity: 0.9;
+  z-index: 2;
+}
+.confidentialite-close-btn:hover {color: #ff00cc;}
+@media (max-width: 900px) {
+  .confidentialite-modal-content {
+    max-width: 99vw;
+    padding: 1.1em 0.5em;
+  }
+  .confidentialite-liste li {min-width:170px;}
+}
+@media (max-width: 600px) {
+  .confidentialite-modal-content {
+    padding: 0.7em 0.2em;
+    max-width: 99vw;
+  }
+  .confidentialite-liste {
+    flex-direction: column;
+    gap: 8px 0;
+  }
+  .confidentialite-liste li {
+    min-width: 0; font-size: 0.98em;
+  }
+}
+@media (max-width: 420px) {
+  .confidentialite-modal-content {
+    padding: 0.5em 0.1em;
+  }
+  .confidentialite-liste li {
+    font-size: 0.95em;
+    padding: 8px 5px 7px 7px;
+  }
+}
+@keyframes fadeIn {from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}
+}
+</style>
+<script>
+function openConfidentialiteModal() {
+  document.getElementById("confidentialite-modal-overlay").style.display = "flex";
+  setTimeout(function() {
+    document.querySelector('.confidentialite-modal-content').scrollIntoView({behavior: "smooth", block: "center"});
+  }, 100);
+}
+function closeConfidentialiteModal() {
+  document.getElementById("confidentialite-modal-overlay").style.display = "none";
+}
+// Close modal with Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key==="Escape" && document.getElementById("confidentialite-modal-overlay").style.display === "flex") {
+    closeConfidentialiteModal();
+  }
+});
+</script>
 
-  <!-- Confidentiality / Security -->
   <section class="security-block">
-    <h2>Total Confidentiality & Sovereignty</h2>
+      <h2>100% Privacy and Sovereignty</h2>
     <ul>
-      <li>100% local processing: no data sent to the cloud.</li>
-      <li>GDPR compliant, European certifications coming soon.</li>
-      <li>Auditable AI models, transparent logs, zero backdoor.</li>
-      <li>Perfect for sensitive industries: health, finance, industry, education…</li>
-      <li>Expert support from sovereign AI engineers.</li>
+      <li>Local processing: no data in the cloud, everything stays with you.</li>
+      <li>GDPR compliant, European certifications pending.</li>
+      <li>Verifiable models, transparent logs, no backdoors.</li>
+      <li>Ideal for healthcare, finance, education, industry, and more.</li>
+      <li>Expert support from independent AI engineers.</li>
     </ul>
   </section>
 
-  <!-- Investors / Partners CTA -->
-  <section class="investor-call">
-    <h2>Investors, Key Accounts, Strategic Partners:</h2>
-    <div>Want to join the sovereign AI revolution?<br>
-      <a href="mailto:parisien.data@gmail.com?subject=ErnestMind%20Partnership">Request a private demo or meeting</a>
+    <section class="investor-call">
+      <h2>Investors, major clients, strategic partners:</h2>
+    <div>Join the sovereign AI revolution.<br>
+      <a href="mailto:parisien.data@gmail.com?subject=ErnestMind%20Partnership">Request an exclusive demo</a>
     </div>
-  </section>
+    </section>
 
-  <!-- International / World map -->
-  <section class="international-block">
-    <h2>The Most International AI Platform</h2>
-    <img class="world-map" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/BlankMap-World-noborders.png/800px-BlankMap-World-noborders.png" alt="ErnestMind World">
-    <div style="margin-top:7px;font-size:1.05em;">ErnestMind already natively works in over 20 languages, on all continents.</div>
-    <div class="flags">
+    <section class="international-block">
+      <h2>The most global AI platform</h2>
+    <img class="world-map" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/BlankMap-World-noborders.png/800px-BlankMap-World-noborders.png" alt="ErnestMind World Map" style="margin-top:14px;">
+    <div style="margin-top:12px;font-size:1.08em;">ErnestMind adapts to all continents, all languages, all professions.</div>
+    <div class="flags" style="margin-top:13px;">
       <span class="flag">🇫🇷</span><span class="flag">🇬🇧</span><span class="flag">🇪🇸</span><span class="flag">🇩🇪</span><span class="flag">🇮🇹</span><span class="flag">🇵🇹</span>
       <span class="flag">🇨🇳</span><span class="flag">🇷🇺</span><span class="flag">🇺🇸</span><span class="flag">🇯🇵</span><span class="flag">🇰🇷</span>
       <span class="flag">🇸🇦</span><span class="flag">🇮🇳</span><span class="flag">🇹🇷</span><span class="flag">🇧🇷</span><span class="flag">🇳🇬</span><span class="flag">🇻🇳</span>
     </div>
-  </section>
+    </section>
 
-  <!-- Roadmap / Vision -->
-  <section class="roadmap-block">
-    <h2>Our Vision: ErnestMind 2025-2026</h2>
+    <section class="roadmap-block">
+      <h2>Vision 2025–2026: AI without limits</h2>
     <ul>
-      <li>1000+ local and hyper-specialized AI models</li>
-      <li>Expansion in America, Asia, Africa, Middle East</li>
-      <li>Global marketplace of sovereign AI models</li>
+      <li>1000+ local & sectoral AI models</li>
+      <li>Global expansion: Americas, Asia, Africa, Middle East</li>
+      <li>Global marketplace for sovereign AI models</li>
       <li>ISO/GDPR/Europe certifications & public partnerships</li>
       <li>API & SDK for universal integration</li>
     </ul>
-  </section>
+    </section>
 
-  <!-- Media Kit / Press kit -->
-  <section class="media-kit-block">
-    <h2>Media kit, press & documentation</h2>
-    <div>Journalists, influencers, partners: discover ErnestMind and download our full press kit.</div>
-    <a href="#" download>📥 Download the media kit (PDF)</a>
-  </section>
+    <section class="media-kit-block">
+      <h2>Media kit, press & documentation</h2>
+    <div>Journalists, influencers, partners: discover ErnestMind and download the complete media kit.</div>
+    <a href="ernestmind_presentation.pdf" download>📥 Download media kit (PDF)</a>
+    </section>
 
-  <!-- Human widget / chatbot -->
-  <section class="chatbot-widget">
-    <span class="bot-icon">🤖</span>
-    <span>Any questions? Chat with our AI or book a demo with a human!</span>
+    <section class="chatbot-widget">
+      <span class="bot-icon">🤖</span>
+    <span>Questions? Talk to our AI or request a demo with an expert!</span>
     <a href="mailto:parisien.data@gmail.com?subject=ErnestMind%20Question">Direct contact</a>
-    <a href="#" onclick="alert('Chatbot feature coming soon!');return false;">Start the chatbot</a>
-  </section>
+    <a href="#" onclick="alert('The chatbot will be available soon!');return false;">Launch chatbot</a>
+    </section>
 
-  <!-- About -->
-  <div class="about">
-    <h2>About ErnestMind</h2>
-    <p>
-      Our team is building the world's most advanced and accessible sovereign AI, with local, multilingual models and absolute confidentiality.<br>
-      ErnestMind aims to revolutionize AI access for all industries, everywhere.<br>
-      Join us for a new era of trust, performance, and AI innovation.
-    </p>
+    <section class="about">
+      <h2>About ErnestMind</h2>
+      <p>
+        Our team is building the most sovereign, multilingual, and powerful AI in the world.<br>
+        ErnestMind revolutionizes access to AI: local, confidential, global, limitless.<br>
+        Enter the new era: your AI, your rules, your data.
+      </p>
+    </section>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <ul class="faq-list">
+        <li>
+          <span class="faq-q">When can I test the models?</span>
+          <span class="faq-a">In 2 days: the first 3 free AI models will be accessible to all registered users.</span>
+        </li>
+        <li>
+          <span class="faq-q">Is it really 100% local?</span>
+          <span class="faq-a">Yes, everything happens on your servers or devices. Never in the cloud.</span>
+        </li>
+        <li>
+          <span class="faq-q">Who is this for?</span>
+          <span class="faq-a">Businesses, experts, teachers, students, citizens, anyone who wants to regain control over AI.</span>
+        </li>
+        <li>
+          <span class="faq-q">Can I become an ambassador?</span>
+          <span class="faq-a">Yes! Check the "AI Ambassador" box or contact us to join the global community.</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="mail-popup-overlay" id="mail-popup-overlay">
+    <div class="mail-popup-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" onclick="closeMailPopup()" aria-label="Close">&times;</button>
+      <h3 id="modal-title">ErnestMind Pre-registration</h3>
+      <label>Your Name</label>
+      <input type="text" id="popup-name" readonly>
+      <label>Your Email</label>
+      <input type="email" id="popup-email" readonly>
+      <label>Preferred Language</label>
+      <input type="text" id="popup-lang" readonly>
+      <label>Company</label>
+      <input type="text" id="popup-company" readonly>
+      <label>Desired Usage</label>
+      <input type="text" id="popup-usage" readonly>
+      <button class="btn-send-mail" onclick="sendMail()">Send My Registration</button>
+      <div class="mail-feedback" id="mail-feedback"></div>
+      <div style="margin-top:10px; font-size:0.96em; color:#888;">
+        <b>Privacy:</b> Your email will never be shared or sold. GDPR compliant.
+      </div>
+      <div style="margin-top:13px; font-size:1.07em; color:#21c87a;">
+        🎁 6 free AI courses upon launch!
+      </div>
+    </div>
   </div>
 
-  <!-- FAQ -->
-  <div class="faq-section">
-    <h2>FAQ</h2>
-    <ul class="faq-list">
-      <li>
-        <span class="faq-q">When can I test the models?</span>
-        <span class="faq-a">In 3 days: the first free models will be available to all who sign up.</span>
-      </li>
-      <li>
-        <span class="faq-q">Is it really 100% local?</span>
-        <span class="faq-a">Yes, ErnestMind ensures your data and processing stay on your servers or devices, never sent to the cloud.</span>
-      </li>
-      <li>
-        <span class="faq-q">Who is it for?</span>
-        <span class="faq-a">For businesses, experts, trainers, students, individuals, and all sectors who want AI control.</span>
-      </li>
-      <li>
-        <span class="faq-q">Can I become a partner?</span>
-        <span class="faq-a">Yes! ErnestMind is seeking partners worldwide. Indicate your interest in the form or contact us directly.</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <div>
       © 2025 ErnestMind &nbsp;|&nbsp; 
       <a href="mailto:parisien.data@gmail.com">Contact</a>
       <span class="footer-links">
         &nbsp;|&nbsp;
-        <a href="#">Legal Notice</a>
+        <a href="#">Legal Mentions</a>
         &nbsp;|&nbsp;
         <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         &nbsp;|&nbsp;
@@ -798,11 +2158,10 @@
     </div>
   </footer>
 
-  <!-- Countdown JS -->
   <script>
-    // Launch date: 3 days from today
+    // Launch Date: in 2 days
     const launchDate = new Date();
-    launchDate.setDate(launchDate.getDate() + 3);
+    launchDate.setDate(launchDate.getDate() + 2);
     launchDate.setHours(0, 0, 0, 0);
 
     function updateCountdown() {
@@ -814,16 +2173,16 @@
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
       let text = "";
-      if (days > 0) text += days + "d ";
+      if (days > 0) text += days + " d ";
       text += String(hours).padStart(2, "0") + "h ";
-      text += String(minutes).padStart(2, "0") + "m ";
+      text += String(minutes).padStart(2, "0") + "min ";
       text += String(seconds).padStart(2, "0") + "s";
       document.getElementById("countdown").textContent = text;
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Language: open translated page
+    // Language change
     function openLangPage(sel) {
       const val = sel.value;
       if (val && val !== "") {
@@ -853,6 +2212,66 @@
           window.open(urls[val], "_self");
         }
       }
+    }
+
+    // Waitlist fake stats animation
+    let waitlistBase = 127601;
+    let badge = document.getElementById("waitlist-count");
+    let badge2 = document.getElementById("waitlist-count2");
+    function animateWaitlist() {
+      let i = waitlistBase;
+      function add() {
+        if (i < 137101) {
+          i += Math.floor(1 + Math.random()*3);
+          badge.textContent = i.toLocaleString('en-US');
+          badge2.textContent = i.toLocaleString('en-US');
+          setTimeout(add, Math.random()*260);
+        }
+      }
+      setTimeout(add, 700);
+    }
+    animateWaitlist();
+
+    // FORM: Opens pre-filled email popup
+    function openMailPopup(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const lang = document.getElementById("lang").options[document.getElementById("lang").selectedIndex].text;
+      const company = document.getElementById("company").value;
+      const usage = document.getElementById("usage").value;
+      document.getElementById("popup-name").value = name;
+      document.getElementById("popup-email").value = email;
+      document.getElementById("popup-lang").value = lang;
+      document.getElementById("popup-company").value = company;
+      document.getElementById("popup-usage").value = usage;
+      document.getElementById("mail-popup-overlay").style.display = "flex";
+      document.getElementById("mail-feedback").textContent = "";
+      setTimeout(function() {
+        document.querySelector('.mail-popup-content').scrollIntoView({behavior: "smooth", block: "center"});
+      }, 200);
+    }
+    function closeMailPopup() {
+      document.getElementById("mail-popup-overlay").style.display = "none";
+    }
+    // Generates a pre-filled mailto: from the fields
+    function sendMail() {
+      const name = document.getElementById("popup-name").value;
+      const email = document.getElementById("popup-email").value;
+      const lang = document.getElementById("popup-lang").value;
+      const company = document.getElementById("popup-company").value;
+      const usage = document.getElementById("popup-usage").value;
+      let mailBody = `Hello ErnestMind,%0D%0A%0D%0AI want to join the AI revolution waitlist!%0D%0A%0D%0A`
+        + `Name: ${name}%0D%0A`
+        + `Email: ${email}%0D%0A`
+        + `Language: ${lang}%0D%0A`
+        + `Company: ${company}%0D%0A`
+        + `Desired Usage: ${usage}%0D%0A`
+        + `%0D%0AI want to receive the 6 free AI courses and be notified as soon as it launches!%0D%0A%0D%0A`
+        + `Thank you and long live the AI revolution!`;
+      window.open(`mailto:parisien.data@gmail.com?subject=ErnestMind%20Pre-registration&body=${mailBody}`);
+      document.getElementById("mail-feedback").textContent = "🌟 Thank you! A pre-filled email has opened, you just need to send it. Keep an eye on your inbox for exclusive updates!";
+      setTimeout(closeMailPopup, 6400);
     }
   </script>
 </body>
