@@ -738,6 +738,129 @@ section h2 {
     </div>
   </section>
 
+<section class="model-v40-section">
+    <style>
+        /* Styles pour la section du modèle V40 */
+        .model-v40-section {
+            text-align: center;
+            margin: 40px auto 0 auto;
+            max-width: 880px;
+            background: var(--card);
+            border-radius: 22px;
+            box-shadow: 0 4px 38px #ff00cc33; /* Ombre rose/violette */
+            padding: 38px 28px 26px 28px;
+            font-size: 1.1em;
+            border: 1.5px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        /* Effet de lueur en arrière-plan */
+        .model-v40-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 10% 10%, #ff00cc18 0%, transparent 50%),
+                        radial-gradient(circle at 90% 90%, #00ffe718 0%, transparent 50%);
+            filter: blur(25px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+        /* Style du titre de la section */
+        .model-v40-section h2 {
+            color: var(--neon2); /* Utilise le rose/violet pour le titre */
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 1.45em;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-shadow: 0 0 20px var(--neon2), 0 0 30px #fff4;
+        }
+        /* Style de la description */
+        .model-v40-description {
+            font-size: 1.15em;
+            margin-bottom: 30px;
+            color: var(--text);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        /* Style du bouton d'appel à l'action */
+        .model-v40-btn {
+            display: inline-block;
+            font-size: 1.2em;
+            font-weight: 800;
+            color: var(--bg);
+            background: var(--neon); /* Utilise le bleu néon pour le bouton principal */
+            border-radius: 13px;
+            padding: 17px 48px;
+            margin-top: 10px;
+            margin-bottom: 17px;
+            box-shadow: 0 0 32px #00ffe744;
+            text-decoration: none;
+            transition: background 0.18s, color 0.18s, transform 0.18s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+        /* Effet de survol du bouton */
+        .model-v40-btn:hover {
+            background: var(--neon2); /* Rose au survol */
+            color: var(--white);
+            transform: scale(1.05);
+            box-shadow: 0 0 58px #ff00cc99;
+        }
+
+        /* Ajustements responsifs pour cette section spécifique */
+        @media (max-width: 900px) {
+            .model-v40-section {
+                max-width: 99vw;
+                padding: 30px 20px 20px 20px;
+            }
+            .model-v40-section h2 {
+                font-size: 1.2em;
+            }
+            .model-v40-description {
+                font-size: 1em;
+            }
+            .model-v40-btn {
+                font-size: 1.05em;
+                padding: 14px 38px;
+            }
+        }
+        @media (max-width: 600px) {
+            .model-v40-section {
+                padding: 20px 15px 15px 15px;
+            }
+            .model-v40-section h2 {
+                font-size: 1.1em;
+                margin-bottom: 18px;
+            }
+            .model-v40-description {
+                font-size: 0.95em;
+                margin-bottom: 20px;
+            }
+            .model-v40-btn {
+                font-size: 0.95em;
+                padding: 12px 30px;
+            }
+        }
+    </style>
+    <h2>Testez ErnestMind AI V40 : Votre IA d'Analyse de Données</h2>
+    <p class="model-v40-description">
+        Découvrez la première version publique de notre puissant modèle d'Intelligence Artificielle dédié à l'analyse de données. Importez vos fichiers CSV ou Excel et laissez ErnestMind AI V40 générer automatiquement des visualisations, des analyses et des rapports détaillés en un clin d'œil.
+    </p>
+    <a class="model-v40-btn" href="https://ernestmind-ai-v40-jwtfx6qupq972hbqgvpbn7.streamlit.app/" target="_blank" rel="noopener noreferrer">
+        Tester ErnestMind AI V40 (Gratuit)
+    </a>
+</section>
 
 <!-- SECTION TEMOIGNAGES ErnestMind (Nouveau Style Alt, Bleu/Marron/Rose, No Blanc, Responsive) -->
 <section id="temoignages" class="em-temoignages-section">
